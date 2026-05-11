@@ -43,7 +43,7 @@
             <input type="email" class="form-control" name="email" placeholder="Masukkan email akun gojek yang akan menggunakan voucher" required>
         </div>
 
-        <button type="submit" class="btn btn-success">Redeem</button>
+        <button type="submit" class="btn btn-success">Kirim Email</button>
     </form>
 
 </body>
