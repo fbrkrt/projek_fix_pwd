@@ -5,7 +5,7 @@ if (session_status() === PHP_SESSION_NONE) {
 include "../user/cek-cookie.php";
 
 if(!isset($_SESSION['email'])){
-    header("Location: login.php");
+    header("Location: ../user/login.php");
     exit;
 }
 ?>

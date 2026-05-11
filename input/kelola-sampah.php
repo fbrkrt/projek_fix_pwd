@@ -3,7 +3,7 @@ session_start();
 include "config/koneksi.php";
 
 if (!isset($_SESSION['email'])) {
-    header("Location: user/login.php");
+    header("Location: ../user/login.php");
     exit;
 }
 
