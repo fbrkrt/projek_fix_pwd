@@ -40,7 +40,7 @@
     <form action="landingpoin.php?id=33" method="POST">
         <div class="mb-3">
             <label class="form-label">Email</label>
-            <input type="email" class="form-control" name="email" placeholder="Masukkan email akun gojek yang akan menggunakan voucher" required>
+            <input type="email" class="form-control" name="email" placeholder="Masukkan email akun gojek" required>
         </div>
 
         <button type="submit" class="btn btn-success">Kirim Email</button>
