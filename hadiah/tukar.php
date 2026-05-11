@@ -1,10 +1,10 @@
 <?php
-include "config/koneksi.php";
+include "../config/koneksi.php";
 session_start();
-include "user/cek-cookie.php";
+include "../user/cek-cookie.php";
 
 if (!isset($_SESSION['email'])) {
-    header("Location: login.php");
+    header("Location: ../user/login.php");
     exit;
 }
 
@@ -30,7 +30,7 @@ $result = mysqli_query($conn, $query);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TUKAR POIN</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../css/hadiah.css">
 </head>
 
 <body>

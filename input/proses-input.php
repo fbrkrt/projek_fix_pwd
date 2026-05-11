@@ -2,14 +2,14 @@
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
-include "user/cek-cookie.php";
+include "../user/cek-cookie.php";
 
 if(!isset($_SESSION['email'])){
-    header("Location: user/login.php");
+    header("Location: ../user/login.php");
     exit;
 }
 
-include 'config/koneksi.php';
+include '../config/koneksi.php';
 
 // Ambil data dari form
 $nama = mysqli_real_escape_string($conn, $_POST['nama']);
@@ -28,16 +28,27 @@ if ($email != $_SESSION['email']) {
     die("Email tidak sesuai dengan akun yang login!");
 }
 
-// Simpan ke tabel sampah
-$query = "INSERT INTO sampah (nama, email, alamat, kategori, berat, tanggal, lokasi, poin) 
-          VALUES ('$nama', '$email', '$alamat', '$kategori', '$berat', '$tanggal', '$lokasi', '$poin')";
+// Mulai transaksi
+mysqli_begin_transaction($conn);
 
-if (mysqli_query($conn, $query)) {
-    // Tambah poin ke user
-    mysqli_query($conn, "UPDATE user SET total = IFNULL(total,0) + $poin WHERE email='$email'");
-    header("Location: input/konfirm.php");
+try {
+    // Simpan ke tabel sampah
+    $query = "INSERT INTO sampah (nama, email, alamat, kategori, berat, tanggal, lokasi, poin) 
+              VALUES ('$nama', '$email', '$alamat', '$kategori', '$berat', '$tanggal', '$lokasi', '$poin')";
+    
+    if (!mysqli_query($conn, $query)) {
+        throw new Exception(mysqli_error($conn));
+    }
+    
+    // PERBAIKAN: Gunakan IFNULL untuk handle user baru yang totalnya NULL
+    mysqli_query($conn, "UPDATE user SET total = IFNULL(total, 0) + $poin WHERE email='$email'");
+    
+    mysqli_commit($conn);
+    header("Location: konfirm.php");
     exit;
-} else {
-    echo "Error: " . mysqli_error($conn);
+    
+} catch (Exception $e) {
+    mysqli_rollback($conn);
+    echo "Error: " . $e->getMessage();
 }
 ?>

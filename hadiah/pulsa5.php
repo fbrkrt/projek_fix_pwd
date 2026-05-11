@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PULSA 5.000</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/hadiah.css">
+    <link rel="stylesheet" href="../css/hadiah.css">
 </head>
 
 <body class="p-4">

@@ -1,10 +1,10 @@
 <?php
-include "config/koneksi.php";
+include "../config/koneksi.php";
 session_start();
-include "user/cek-cookie.php";
+include "../user/cek-cookie.php";
 
 if (!isset($_SESSION['email'])) {
-    header("Location: user/login.php");
+    header("Location: ../user/login.php");
     exit;
 }
 
@@ -41,20 +41,20 @@ $poin_user = $user['total']; // sisa poin terbaru
     <meta charset="UTF-8">
     <title>Redeem Berhasil</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/hadiah.css">
+    <link rel="stylesheet" href="../css/hadiah.css">
 </head>
 <body>
 <nav class="nav-full">
     <div class="logo-web">
         <ul>
             <li><img src="../assets/logo.png" alt="logo bank sampah" style="width: 50px;"></li>
-            <li><a href="index.php">Trashbank</a></li>
+            <li><a href="../index/index.php">Trashbank</a></li>
         </ul>
     </div>
 
     <div class="nav-container">
         <ul>
-            <li><a href="index.php" class="garis-bawah">Home</a></li>
+            <li><a href="../index/index.php" class="garis-bawah">Home</a></li>
             <li><a href="../user/register.php" class="garis-bawah">Registrasi</a></li>
             <li><a href="../hadiah/tukar.php" class="garis-bawah">Rewards</a></li>
             <li><a href="#categories" class="garis-bawah">Categories</a></li>

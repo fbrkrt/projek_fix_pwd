@@ -1,10 +1,10 @@
 <?php
-include "config/koneksi.php";
+include "../config/koneksi.php";
 session_start();
-include "user/cek-cookie.php";
+include "../user/cek-cookie.php";
 
 if (!isset($_SESSION['email'])) {
-    header("Location: login.php");
+    header("Location: ../user/login.php");
     exit;
 }
 
@@ -53,6 +53,10 @@ if ($nama_hadiah == "Pulsa 5000" || $nama_hadiah == "Pulsa 5.000") {
     header("Location: gojek.php?id=$id_hadiah");
 } else if ($nama_hadiah == "Saldo GoPay 200.000") {
     header("Location: gopay.php?id=$id_hadiah");
+} else if ($nama_hadiah == "Spotify Premium 3 hari") {
+    header("Location: valid-email-spoty.php?id=$id_hadiah");
+} else if ($nama_hadiah == "Voucher Belanja Shopee 5000") {
+    header("Location: valid-email-spay.php?id=$id_hadiah");
 } else {
     header("Location: landingpoin.php?id=$id_hadiah");
 }

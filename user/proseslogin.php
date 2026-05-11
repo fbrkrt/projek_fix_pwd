@@ -2,7 +2,7 @@
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
-include "config/koneksi.php";
+include "../config/koneksi.php";
 
 $email = mysqli_real_escape_string($conn, $_POST['email']);
 $pass = $_POST['pass'];

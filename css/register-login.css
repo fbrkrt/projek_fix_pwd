@@ -195,55 +195,107 @@ body {
 
 /* ========== CARD UTAMA (berhasil.php) ========== */
 .card.text-center{
-        width: 70%;
-        margin: 100px auto;
-        border-radius: 20px;
-        overflow: hidden;
-        box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-    }
+    width: 85%;
+    max-width: 1050px;
+    margin: 60px auto;
+    border-radius: 28px;
+    overflow: hidden;
+    background: #f8f8f8;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.18);
+}
 
-    .row{
-        display: flex;
-        justify-content: space-between;
-        padding: 10px;
-    }
-    .bg-succes{
-        background-color: #354024;
-        padding: 20px 15px;
-        color:#CFBB99;
-    }
-    .col-md-6{
-        flex: 1;
-    }
+/* BODY */
+.card-body{
+    padding: 45px;
+}
 
-    .col-md-6 .card{
-        height: 100%;
-        border-radius: 15px;
-        transition: 0.3s;
-        box-shadow: #4C3D19;
-    }
+.card-title{
+    font-size: 30px;
+    font-weight: 700;
+    color: #2b2b2b;
+}
 
-    .col-md-6 .card:hover{
-        transform: translateY(-5px);
-        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    }
+h3.card-text{
+    font-size: 25px;
+    color: #555;
+    margin-bottom: 40px;
+}
 
-    .btn-primary{
-        border-radius: 10px;
-        padding: 10px 18px;
-    }
-    .card-body1 {
-        background-color: #fffdf7;
-        box-shadow: 0 4px 15px rgba(255, 223, 100, 0.5);
-    }
-    .card-body2 {
-        background-color: #f8fff8;
-        box-shadow: 0 4px 15px rgba(75, 83, 32, 0.5);
-    }
+/* BOX MENU */
+.row{
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+}
 
-    .card .border-warning{
-        box-shadow:#4C3D19;
-    }
-    .card .border-succes{
-        box-shadow:#354024;
-    }
+.col-md-6{
+    flex: 1;
+}
+
+/* CARD KIRI KANAN */
+.col-md-6 .card{
+    border: none !important;
+    border-radius: 22px;
+    overflow: hidden;
+    background: white;
+    transition: 0.3s;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+}
+
+.col-md-6 .card:hover{
+    transform: translateY(-5px);
+}
+
+/* AKSEN CREAM */
+.border-warning{
+    border-top: 6px solid #CFBB99 !important;
+}
+
+.border-success{
+    border-top: 6px solid #CFBB99 !important;
+}
+
+/* HEADER CARD */
+.col-md-6 .card-header{
+    background: #CFBB99 !important;
+    color: #3d3225 !important;
+    font-size: 22px;
+    font-weight: 700;
+    border: none;
+    padding: 18px;
+}
+
+/* BODY CARD */
+.col-md-6 .card-body{
+    padding: 28px;
+}
+
+.col-md-6 .card-text{
+    color: #555;
+    font-size: 17px;
+}
+
+/* BUTTON */
+.btn-primary{
+    background: #355f2e !important;
+    border: none !important;
+    border-radius: 14px;
+    padding: 12px 28px;
+    font-size: 16px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn-primary:hover{
+    background: #4f7c45 !important;
+    transform: scale(1.05);
+}
+
+/* FOOTER */
+.card-footer{
+    background: #f1f1f1;
+    color: #666;
+    font-size: 18px;
+    font-style: italic;
+    padding: 20px;
+}

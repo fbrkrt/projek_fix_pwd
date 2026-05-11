@@ -2,7 +2,7 @@
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
-include "user/cek-cookie.php";
+include "../user/cek-cookie.php";
 
 if(!isset($_SESSION['email'])){
     header("Location: login.php");
@@ -14,9 +14,9 @@ if(!isset($_SESSION['email'])){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Sampah - Trashbank</title>
+    <title>Input Sampah - Trashbank</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/sampah.css">
+    <link rel="stylesheet" href="../css/sampah.css">
 </head>
 <body>
 <nav class="nav-full">

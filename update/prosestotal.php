@@ -1,20 +1,20 @@
 <?php
-include "config/koneksi.php";
+session_start();  // PERBAIKAN: tambahkan session_start
+include "../config/koneksi.php";  // PERBAIKAN: path
 
-// ambil total poin dari tabel sampah
-$query = "SELECT SUM(poin) AS total FROM sampah";
-$result = mysqli_query($conn, $query);
-$data = mysqli_fetch_assoc($result);
+if (!isset($_SESSION['email'])) {
+    header("Location: ../user/login.php");
+    exit;
+}
 
-$total = $data['total'];
-
-// contoh: update ke user (misalnya user yang login)
+// ambil total poin user dari database
 $email = $_SESSION['email'];
+$query = mysqli_query($conn, "SELECT total FROM user WHERE email='$email'");
+$data = mysqli_fetch_assoc($query);
 
-// UPDATE lebih masuk akal daripada INSERT
-$update = "UPDATE user SET total = '$total' WHERE email = '$email'";
-mysqli_query($conn, $update);
+$total = $data['total'] ?? 0;
 $_SESSION['total'] = $total;
+
 header("Location: ../hadiah/tukar.php");
 exit;
 ?>

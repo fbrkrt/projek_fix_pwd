@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PULSA 10.000</title>
+    <title>SALDO GOPAY</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/hadiah.css">
 </head>
@@ -35,13 +35,12 @@
     </div>
 </nav>
 
-    <h1>Pulsa 10.000</h1>
+    <h1>Email Akun Spotify</h1>
 
-    <form action="landingpoin.php?id=10"
-     method="POST">
+    <form action="landingpoin.php?id=9" method="POST">
         <div class="mb-3">
-            <label class="form-label">Nomor</label>
-            <input type="number" class="form-control" name="nomor" placeholder="Masukkan nomor yang akan diisi pulsa" required>
+            <label class="form-label">Email</label>
+            <input type="email" class="form-control" name="email" placeholder="Masukkan email akun gojek yang akan menggunakan voucher" required>
         </div>
 
         <button type="submit" class="btn btn-success">Redeem</button>

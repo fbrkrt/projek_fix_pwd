@@ -11,7 +11,7 @@ if(isset($_SESSION['email'])){
 
 // Cek apakah ada cookie remember me
 if(isset($_COOKIE['remember_email']) && isset($_COOKIE['remember_password'])){
-    include "config/koneksi.php";
+    include "../config/koneksi.php";
     
     $email = mysqli_real_escape_string($conn, $_COOKIE['remember_email']);
     $password = $_COOKIE['remember_password'];

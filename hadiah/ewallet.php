@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E-Wallet 20.000</title>
+    <title>SALDO E-WALLET</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/hadiah.css">
+    <link rel="stylesheet" href="../css/hadiah.css">
 </head>
 
 <body class="p-4">
@@ -44,10 +44,10 @@
             <label class="form-check-label">Dana</label> 
             <input type="checkbox" class="form-check-input" name="nama" value="ovo"  >
             <label class="form-check-label">OVO</label><br>
-            <input type="checkbox" class="form-check-input" name="nama" value="linkaja"  >
-            <label class="form-check-label">LinkAja</label> 
-            <input type="checkbox" class="form-check-input" name="nama" value="shopee"  >
-            <label class="form-check-label">Shopee</label><br>
+            <input type="checkbox" class="form-check-input" name="nama" value="gopay"  >
+            <label class="form-check-label">GoPay</label> 
+            <input type="checkbox" class="form-check-input" name="nama" value="shopeepay"  >
+            <label class="form-check-label">Shopeepay</label><br>
 
             <br><br>
             <label class="form-label">Nomor</label>

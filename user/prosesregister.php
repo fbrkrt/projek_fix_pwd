@@ -1,6 +1,6 @@
 <!-- proses register -->
 <?php
-include "config/koneksi.php";
+include "../config/koneksi.php";
 
 $nama = $_POST['nama'];
 $email = $_POST['email'];
@@ -27,3 +27,4 @@ if(mysqli_query($conn, $query)){
 }else{
     echo"Regitrasi gagal!";
 }
+?>

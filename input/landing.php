@@ -1,6 +1,6 @@
 <?php
 session_start();
-include "user/cek-cookie.php";  // Tambahkan baris ini
+include "../user/cek-cookie.php";  // Tambahkan baris ini
 
 // Rest of your code...
 ?>
@@ -10,22 +10,23 @@ include "user/cek-cookie.php";  // Tambahkan baris ini
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Sampah - Trashbank</title>
+    <title>Berhasil Input - Trashbank</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/sampah.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="../css/sampah.css">
 </head>
 <body>
 <nav class="nav-full">
     <div class="logo-web">
         <ul>
             <li><img src="../assets/logo.png" alt="logo bank sampah" style="width: 50px;"></li>
-            <li><a href="index.php">Trashbank</a></li>
+            <li><a href="../index/index.php">Trashbank</a></li>
         </ul>
     </div>
 
     <div class="nav-container">
         <ul>
-            <li><a href="index.php" class="garis-bawah">Home</a></li>
+            <li><a href="../index/index.php" class="garis-bawah">Home</a></li>
             <li><a href="../user/register.php" class="garis-bawah">Registrasi</a></li>
             <li><a href="../hadiah/tukar.php" class="garis-bawah">Rewards</a></li>
             <li><a href="#categories" class="garis-bawah">Categories</a></li>
@@ -42,14 +43,14 @@ include "user/cek-cookie.php";  // Tambahkan baris ini
 
     <section class="success-landing">
         <div class="success-card">
-            <div class="success-icon">
-                <i class="fas fa-leaf"></i>
-                <i class="fas fa-recycle"></i>
-                <i class="fas fa-tree"></i>
-            </div>
+<div class="success-icon">
+    <i class="bi bi-recycle"></i>
+    <i class="bi bi-trash3-fill"></i>
+    <i class="bi bi-leaf-fill"></i>
+</div>
             
             <?php
-            include 'config/koneksi.php';
+            include '../config/koneksi.php';
             
             $data = mysqli_query($conn, "SELECT * FROM sampah ORDER BY id DESC LIMIT 1");
             $row = mysqli_fetch_assoc($data);
@@ -68,14 +69,16 @@ include "user/cek-cookie.php";  // Tambahkan baris ini
             
             <div class="action-buttons">
                 <a href="../index/index.php" class="btn-home">
-                    <i class="fas fa-home"></i> Kembali ke Home
-                </a>
-                <a href="../hadiah/tukar.php" class="btn-redeem">
-                    <i class="fas fa-gift"></i> Tukar Poin Sekarang
-                </a>
-                <a href="input.php" class="btn-deposit">
-                    <i class="fas fa-trash-alt"></i> Setor Lagi
-                </a>
+    <i class="bi bi-house-fill"></i> Kembali ke Home
+</a>
+
+<a href="../hadiah/tukar.php" class="btn-redeem">
+    <i class="bi bi-gift-fill"></i> Tukar Poin Sekarang
+</a>
+
+<a href="input.php" class="btn-deposit">
+    <i class="bi bi-trash-fill"></i> Setor Lagi
+</a>
             </div>
         </div>
     </section>
