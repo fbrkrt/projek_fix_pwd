@@ -1,6 +1,6 @@
 <?php
-session_start();  // PERBAIKAN: tambahkan session_start
-include "../config/koneksi.php";  // PERBAIKAN: path
+session_start();
+include "../config/koneksi.php";
 
 if (!isset($_SESSION['email'])) {
     header("Location: ../user/login.php");

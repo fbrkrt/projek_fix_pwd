@@ -6,11 +6,15 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.4)), url('../assets/bg-web-fixx.png');
+
+    background:linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.4)), url('../assets/bg-web-fixx.png');
+
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    min-height: 100vh;
+
+    height: 100vh;
+    overflow-y: auto;  
 }
 
 @media (max-width: 768px) {
@@ -194,108 +198,197 @@ body {
 }
 
 /* ========== CARD UTAMA (berhasil.php) ========== */
+/* ================= SUCCESS CARD ================= */
+
 .card.text-center{
-    width: 85%;
-    max-width: 1050px;
-    margin: 60px auto;
-    border-radius: 28px;
+    width: 90%;
+    max-width: 760px;
+
+    margin: 95px auto 0 auto;
+
+    border-radius: 24px;
+
     overflow: hidden;
-    background: #f8f8f8;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.18);
+
+    background:
+        rgba(28, 34, 27, 0.82);
+
+    backdrop-filter: blur(6px);
+
+    border:
+        1px solid rgba(255,255,255,0.06);
+
+    box-shadow:
+        0 10px 35px rgba(0,0,0,0.35);
+}
+/* ================= HEADER ================= */
+
+.bg-succes{
+    background: #355f2e !important;
+    color: white;
+
+    height: 58px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+
+    font-size: 16px;
+    font-weight: 600;
 }
 
-/* BODY */
+/* ================= BODY ================= */
+
 .card-body{
-    padding: 45px;
+    padding: 22px;
 }
 
 .card-title{
-    font-size: 30px;
-    font-weight: 700;
-    color: #2b2b2b;
+    color: #f4f4f4;
+    font-size: 28px;
 }
 
 h3.card-text{
-    font-size: 25px;
-    color: #555;
-    margin-bottom: 40px;
+      color: #b9c2b5;
 }
 
-/* BOX MENU */
-.row{
+/* ================= MENU WRAPPER ================= */
+
+.card-body .row{
     display: flex;
-    gap: 30px;
-    justify-content: center;
+    flex-wrap: nowrap;
+    gap: 16px;
 }
 
-.col-md-6{
+.card-body .col-md-6{
     flex: 1;
+    margin: 0;
+    padding: 0;
 }
 
-/* CARD KIRI KANAN */
+/* ================= MINI CARD ================= */
+
+/* ================= MINI CARD ================= */
+
 .col-md-6 .card{
-    border: none !important;
-    border-radius: 22px;
+    background:
+        rgba(255,255,255,0.06);
+
+    border:
+        1px solid rgba(255,255,255,0.05) !important;
+
+    border-radius: 18px;
+
     overflow: hidden;
-    background: white;
-    transition: 0.3s;
-    box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+
+    box-shadow:
+        0 4px 14px rgba(0,0,0,0.15);
 }
+
+.card-header{
+
+    border-bottom:
+        1px solid rgba(255,255,255,0.05) !important;
+
+    color: #f2f2f2;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+/* TOP ACCENT */
+
+.col-md-6 .card::before{
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 5px;
+
+    background: linear-gradient(
+        90deg,
+        #355f2e,
+        #6ea965
+    );
+}
+
+/* HOVER */
 
 .col-md-6 .card:hover{
-    transform: translateY(-5px);
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 24px rgba(0,0,0,0.08),
+        0 2px 4px rgba(0,0,0,0.05);
 }
 
-/* AKSEN CREAM */
-.border-warning{
-    border-top: 6px solid #CFBB99 !important;
-}
+/* ================= MINI CARD BODY ================= */
 
-.border-success{
-    border-top: 6px solid #CFBB99 !important;
-}
-
-/* HEADER CARD */
-.col-md-6 .card-header{
-    background: #CFBB99 !important;
-    color: #3d3225 !important;
-    font-size: 22px;
-    font-weight: 700;
-    border: none;
+.card-body1,
+.card-body2{
     padding: 18px;
 }
 
-/* BODY CARD */
-.col-md-6 .card-body{
-    padding: 28px;
-}
-
 .col-md-6 .card-text{
-    color: #555;
-    font-size: 17px;
+    color: #c6cec2;
+    font-size: 14px;
+
+    line-height: 1.7;
 }
 
-/* BUTTON */
+/* ================= BUTTON ================= */
+
 .btn-primary{
-    background: #355f2e !important;
+    background:
+        linear-gradient(
+            135deg,
+            #5f8f52,
+            #3f6b36
+        ) !important;
+
     border: none !important;
-    border-radius: 14px;
-    padding: 12px 28px;
-    font-size: 16px;
+
+    border-radius: 10px;
+
+    padding: 10px 20px;
+
     font-weight: 600;
-    transition: 0.3s;
+
+    box-shadow:
+        0 4px 14px rgba(0,0,0,0.25);
 }
 
 .btn-primary:hover{
-    background: #4f7c45 !important;
-    transform: scale(1.05);
+    background: #2a4b24 !important;
 }
 
-/* FOOTER */
+/* ================= FOOTER ================= */
+
 .card-footer{
-    background: #f1f1f1;
-    color: #666;
-    font-size: 18px;
-    font-style: italic;
-    padding: 20px;
+    background:
+        rgba(255,255,255,0.03);
+
+    color:
+        rgba(255,255,255,0.6);
+
+    border-top:
+        1px solid rgba(255,255,255,0.04);
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:768px){
+
+    .card.text-center{
+        width: 94%;
+    }
+
+    .card-body .row{
+        flex-wrap: wrap;
+    }
+
 }

@@ -1,4 +1,3 @@
-<!-- proses register -->
 <?php
 include "../config/koneksi.php";
 
@@ -8,7 +7,7 @@ $pass = $_POST['pass'];
 $conf = $_POST['confirmpass'];
 
 if($pass != $conf){
-    echo "Password tidak sama!";
+    echo "<script>alert('Password tidak sama!'); window.location='register.php';</script>";
     exit;
 }
 

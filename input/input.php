@@ -1,7 +1,4 @@
 <?php
-if (session_status() === PHP_SESSION_NONE) {
-    session_start();
-}
 include "../user/cek-cookie.php";
 
 if(!isset($_SESSION['email'])){
@@ -19,31 +16,30 @@ if(!isset($_SESSION['email'])){
     <link rel="stylesheet" href="../css/sampah.css">
 </head>
 <body>
-<nav class="nav-full">
-    <div class="logo-web">
-        <ul>
-            <li><img src="../assets/logo.png" alt="logo bank sampah" style="width: 50px;"></li>
-            <li><a href="index.php">Trashbank</a></li>
-        </ul>
-    </div>
+    <nav class="nav-full">
+        <div class="logo-web">
+            <ul>
+                <li><img src="../assets/logo.png" alt="logo bank sampah" style="width: 50px;"></li>
+                <li><a href="index.php">Trashbank</a></li>
+            </ul>
+        </div>
 
-    <div class="nav-container">
-        <ul>
-            <li><a href="index.php" class="garis-bawah">Home</a></li>
-            <li><a href="../user/register.php" class="garis-bawah">Registrasi</a></li>
-            <li><a href="../hadiah/tukar.php" class="garis-bawah">Rewards</a></li>
-            <li><a href="#categories" class="garis-bawah">Categories</a></li>
-            <li><a href="./contact.php" class="garis-bawah">Contact</a></li>
-            <li><a href="../input/kelola-sampah.php" class="garis-bawah">History</a></li>
-            <li><a href="../user/edit-profil.php" class="garis-bawah">Profil</a></li>
-        </ul>
-    </div>
+        <div class="nav-container">
+            <ul>
+                <li><a href="index.php" class="garis-bawah">Home</a></li>
+                <li><a href="../user/register.php" class="garis-bawah">Registrasi</a></li>
+                <li><a href="../hadiah/tukar.php" class="garis-bawah">Rewards</a></li>
+                <li><a href="#categories" class="garis-bawah">Categories</a></li>
+                <li><a href="./contact.php" class="garis-bawah">Contact</a></li>
+                <li><a href="../input/kelola-sampah.php" class="garis-bawah">History</a></li>
+                <li><a href="../user/edit-profil.php" class="garis-bawah">Profil</a></li>
+            </ul>
+        </div>
 
-    <div class="get-started">
-        <a href="../index/index.php">Dashboard</a>
-    </div>
-</nav>
-
+        <div class="get-started">
+            <a href="../index/index.php">Dashboard</a>
+        </div>
+    </nav>
 
     <form action="proses-input.php" method="POST" class="form-input" style="margin-top: 100px; max-width: 600px; margin-left: auto; margin-right: auto;">
         <div class="judul-form text-center mb-4">
@@ -58,7 +54,7 @@ if(!isset($_SESSION['email'])){
         
         <div class="mb-3">
             <label for="email" class="form-label">Email</label>
-            <input type="email" class="form-control" id="email" name="email" value="<?= htmlspecialchars($_SESSION['email'] ?? '') ?>" required>
+            <input type="email" class="form-control" id="email" name="email" value="<?= htmlspecialchars($_SESSION['email'] ?? '') ?>" readonly>
         </div>
         
         <div class="mb-3">
@@ -110,7 +106,7 @@ if(!isset($_SESSION['email'])){
         </div>
         
         <div class="subres text-center">
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" name="submit" class="btn btn-primary">Submit</button>
             <button type="reset" class="btn btn-secondary">Reset</button>
         </div>
     </form>

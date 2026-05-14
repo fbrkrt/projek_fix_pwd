@@ -40,7 +40,7 @@
     <form action="landingpoin.php?id=11" method="POST">
         <div class="mb-3">
             <label class="form-label">Nomor</label>
-            <input type="number" class="form-control" name="nomor" placeholder="Masukkan nomor yang akan diisi saldo shopeepay" required>
+            <input type="number" class="form-control" name="nomor" placeholder="Masukkan nomor yang akan menggunakan voucher" required>
         </div>
 
         <button type="submit" class="btn btn-success">Redeem</button>

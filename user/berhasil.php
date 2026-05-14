@@ -18,33 +18,33 @@ if (!isset($_SESSION['nama'])) {
     <title>Berhasil Login</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"> 
-    <link rel="stylesheet" href="../css/register-login.css">
+    <link rel="stylesheet" href="../css/register-login.css?v=<?php echo time(); ?>">
 </head>
 <body>
-<nav class="nav-full">
-    <div class="logo-web">
-        <ul>
-            <li><img src="../assets/logo.png" alt="logo bank sampah" style="width: 50px;"></li>
-            <li><a href="../index/index.php">Trashbank</a></li>
-        </ul>
-    </div>
+    <nav class="nav-full">
+        <div class="logo-web">
+            <ul>
+                <li><img src="../assets/logo.png" alt="logo bank sampah" style="width: 50px;"></li>
+                <li><a href="../index/index.php">Trashbank</a></li>
+            </ul>
+        </div>
 
-    <div class="nav-container">
-        <ul>
-            <li><a href="../index/index.php" class="garis-bawah">Home</a></li>
-            <li><a href="../user/register.php" class="garis-bawah">Registrasi</a></li>
-            <li><a href="../hadiah/tukar.php" class="garis-bawah">Rewards</a></li>
-            <li><a href="#categories" class="garis-bawah">Categories</a></li>
-            <li><a href="./contact.php" class="garis-bawah">Contact</a></li>
-            <li><a href="../input/kelola-sampah.php" class="garis-bawah">History</a></li>
-            <li><a href="../user/edit-profil.php" class="garis-bawah">Profil</a></li>
-        </ul>
-    </div>
+        <div class="nav-container">
+            <ul>
+                <li><a href="../index/index.php" class="garis-bawah">Home</a></li>
+                <li><a href="../user/register.php" class="garis-bawah">Registrasi</a></li>
+                <li><a href="../hadiah/tukar.php" class="garis-bawah">Rewards</a></li>
+                <li><a href="../index/index.php#categories" class="garis-bawah">Categories</a></li>
+                <li><a href="../index/contact.php" class="garis-bawah">Contact</a></li>
+                <li><a href="../input/kelola-sampah.php" class="garis-bawah">History</a></li>
+                <li><a href="../user/edit-profil.php" class="garis-bawah">Profil</a></li>
+            </ul>
+        </div>
 
-    <div class="get-started">
-        <a href="logout.php">Logout</a>
-    </div>
-</nav>
+        <div class="get-started">
+            <a href="logout.php">Logout</a>
+        </div>
+    </nav>
 
     <div class="card text-center" style="margin-top: 100px;">
         <div class="bg-succes" style="background:#355f2e; color:white; height:60px; padding-top:20px;">
@@ -59,8 +59,8 @@ if (!isset($_SESSION['nama'])) {
                     <div class="card border-warning">
                         <div class="card-header">Input Sampah</div>
                         <div class="card-body1">
-                            <p class="card-text">Masukkan sampahmu sekarang dan tukarkan poinmu!</p>
-                            <a href="../input/input.php" class="btn btn-primary">Input Sampah Sekarang</a>
+                            <p class="card-text">Masukkan sampahmu dan tukar poinnya!</p>
+                            <a href="../input/input.php" class="btn btn-primary">Input Sekarang</a>
                         </div>
                     </div>
                 </div>

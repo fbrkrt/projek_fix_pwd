@@ -1,8 +1,18 @@
 <?php
-session_start();
-include "../user/cek-cookie.php";  // Tambahkan baris ini
+include "../user/cek-cookie.php";
 
-// Rest of your code...
+if(!isset($_SESSION['email'])){
+    header("Location: ../user/login.php");
+    exit;
+}
+
+if(!isset($_SESSION['temp_sampah'])){
+    header("Location: landing.php");
+    exit;
+}
+
+$data = $_SESSION['temp_sampah'];
+$poin = $data['berat'] * 10;
 ?>
 
 <!DOCTYPE html>
@@ -12,85 +22,96 @@ include "../user/cek-cookie.php";  // Tambahkan baris ini
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Konfirmasi Sampah - Trashbank</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../css/sampah.css">
+    <link rel="stylesheet" href="../css/sampah.css?v=<?php echo time(); ?>">
 </head>
 <body>
-<nav class="nav-full">
-    <div class="logo-web">
-        <ul>
-            <li><img src="../assets/logo.png" alt="logo bank sampah" style="width: 50px;"></li>
-            <li><a href="../index/index.php">Trashbank</a></li>
-        </ul>
-    </div>
+    <nav class="nav-full">
+        <div class="logo-web">
+            <ul>
+                <li><img src="../assets/logo.png" alt="logo bank sampah" style="width: 50px;"></li>
+                <li><a href="../index/index.php">Trashbank</a></li>
+            </ul>
+        </div>
 
-    <div class="nav-container">
-        <ul>
-            <li><a href="../index/index.php" class="garis-bawah">Home</a></li>
-            <li><a href="../user/register.php" class="garis-bawah">Registrasi</a></li>
-            <li><a href="../hadiah/tukar.php" class="garis-bawah">Rewards</a></li>
-            <li><a href="#categories" class="garis-bawah">Categories</a></li>
-            <li><a href="./contact.php" class="garis-bawah">Contact</a></li>
-            <li><a href="../input/kelola-sampah.php" class="garis-bawah">History</a></li>
-            <li><a href="../user/edit-profil.php" class="garis-bawah">Profil</a></li>
-        </ul>
-    </div>
+        <div class="nav-container">
+            <ul>
+                <li><a href="../index/index.php" class="garis-bawah">Home</a></li>
+                <li><a href="../user/register.php" class="garis-bawah">Registrasi</a></li>
+                <li><a href="../hadiah/tukar.php" class="garis-bawah">Rewards</a></li>
+                <li><a href="#categories" class="garis-bawah">Categories</a></li>
+                <li><a href="./contact.php" class="garis-bawah">Contact</a></li>
+                <li><a href="../input/kelola-sampah.php" class="garis-bawah">History</a></li>
+                <li><a href="../user/edit-profil.php" class="garis-bawah">Profil</a></li>
+            </ul>
+        </div>
 
-    <div class="get-started">
-        <a href="../index/index.php">Dashboard</a>
-    </div>
-</nav>
+        <div class="get-started">
+            <a href="../index/index.php">Dashboard</a>
+        </div>
+    </nav>
 
-    
     <section class="card-info">
-        <?php
-        include '../config/koneksi.php';
-        
-        $data = mysqli_query($conn, "SELECT * FROM sampah ORDER BY id DESC LIMIT 1");
-        $row = mysqli_fetch_assoc($data);
-        ?>
-    
-    <div class="card2">
-        <h5 class="card-header">Detail Input Sampah</h5>
-        <div class="card-body">
-            <table class="table">
-                <tr>
-                    <td>Nama</td>
-                    <td>:</td>
-                    <td><?php echo $row['nama'] ?></td>
-                </tr>
-                <tr>
-                    <td>Email</td>
-                    <td>:</td>
-                    <td><?php echo $row['email'] ?></td>
-                </tr>
-                <tr>
-                    <td>Alamat</td>
-                    <td>:</td>
-                <td><?php echo $row['alamat'] ?></td>
-            </tr>
-            <tr>
-                <td>Kategori</td>
-                <td>:</td>
-                <td><?php echo $row['kategori'] ?></td>
-            </tr>
-            <tr>
-                <td>Berat Sampah (kg)</td>
-                <td>:</td>
-                <td><?php echo $row['berat'] . "kg" ?></td>
-            </tr>
-            <tr>
-                <td>Tanggal Setor</td>
-                <td>:</td>
-                <td><?php echo $row['tanggal'] ?></td>
-            </tr>
-            <tr>
-                <td>Lokasi</td>
-                <td>:</td>
-                <td><?php echo $row['lokasi'] ?></td>
-            </tr>
-        </table>
-        <a href="landing.php" class="btn btn-primary">Konfirmasi</a>
-    </div>
+        <div class="card2">
+            <h5 class="card-header">Konfirmasi Data Sampah</h5>
+            <div class="card-body">
+                <p>Periksa kembali data Anda sebelum disimpan:</p>
+                <table class="table">
+                    <tr>
+                        <td>Nama</th>
+                        <td>:</th>
+                        <td><?php echo htmlspecialchars($data['nama']); ?></td>
+                    </tr>
+                    <tr>
+                        <td>Email</th>
+                        <td>:</th>
+                        <td><?php echo htmlspecialchars($data['email']); ?></td>
+                    </tr>
+                    <tr>
+                        <td>Alamat</th>
+                        <td>:</th>
+                        <td><?php echo htmlspecialchars($data['alamat']); ?></td>
+                    </tr>
+                    <tr>
+                        <td>Kategori</th>
+                        <td>:</th>
+                        <td><?php echo htmlspecialchars($data['kategori']); ?></td>
+                    </tr>
+                    <tr>
+                        <td>Berat Sampah (kg)</th>
+                        <td>:</th>
+                        <td><?php echo $data['berat']; ?> kg</td>
+                    </tr>
+                    <tr>
+                        <td>Tanggal Setor</th>
+                        <td>:</th>
+                        <td><?php echo $data['tanggal']; ?></td>
+                    </tr>
+                    <tr>
+                        <td>Lokasi</th>
+                        <td>:</th>
+                        <td><?php echo htmlspecialchars($data['lokasi']); ?></td>
+                    </tr>
+                    <tr>
+                        <td>Poin</th>
+                        <td>:</th>
+                        <td><strong style="color:green"><?php echo $poin; ?> poin</strong></td>
+                    </tr>
+                </table>
+                
+                <form method="POST" action="proses-input.php" style="display: inline;">
+                    <input type="hidden" name="nama" value="<?php echo htmlspecialchars($data['nama']); ?>">
+                    <input type="hidden" name="email" value="<?php echo htmlspecialchars($data['email']); ?>">
+                    <input type="hidden" name="alamat" value="<?php echo htmlspecialchars($data['alamat']); ?>">
+                    <input type="hidden" name="kategori" value="<?php echo htmlspecialchars($data['kategori']); ?>">
+                    <input type="hidden" name="berat" value="<?php echo $data['berat']; ?>">
+                    <input type="hidden" name="tanggal" value="<?php echo $data['tanggal']; ?>">
+                    <input type="hidden" name="lokasi" value="<?php echo htmlspecialchars($data['lokasi']); ?>">
+                    <br>
+                    <button type="submit" name="confirm" class="btn btn-primary">✅ Ya, Simpan</button>
+                </form>
+                <a href="batal.php" class="btn btn-primary">❌ Batal</a>
+            </div>
+        </div>
     </section>
 </body>
 </html>

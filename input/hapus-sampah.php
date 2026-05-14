@@ -25,7 +25,7 @@ if ($data) {
         mysqli_query($conn, "DELETE FROM sampah WHERE id='$id'");
         
         // Kurangi poin user
-        mysqli_query($conn, "UPDATE user SET total = total - $poin WHERE email='$email'");
+        mysqli_query($conn, "UPDATE user SET total = GREATEST(total - $poin, 0)");
         
         mysqli_commit($conn);
         echo "<script>alert('Data sampah berhasil dihapus!'); window.location='kelola-sampah.php';</script>";

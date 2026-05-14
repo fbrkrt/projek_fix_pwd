@@ -1,15 +1,11 @@
 <?php
-if (session_status() === PHP_SESSION_NONE) {
-    session_start();
-}
-
-// Hapus semua session
+session_start();
 session_destroy();
 
-// Hapus cookie remember me
+// Hapus cookie
+setcookie('remember_token', '', time() - 3600, "/");
 setcookie('remember_email', '', time() - 3600, "/");
-setcookie('remember_password', '', time() - 3600, "/");
 
-header("Location: ../index/index.php");
+header("Location: login.php");
 exit;
 ?>

@@ -25,64 +25,73 @@ if (!$data) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Sampah - Trashbank</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="../css/sampah.css">
+    <link rel="stylesheet" href="../css/edit-sampah.css">
 </head>
 <body>
-<nav class="nav-full">
-    <div class="logo-web">
-        <ul>
-            <li><img src="../assets/logo.png" alt="logo bank sampah" style="width: 50px;"></li>
-            <li><a href="index.php">Trashbank</a></li>
-        </ul>
-    </div>
+    <nav class="nav-full">
+        <div class="logo-web">
+            <ul>
+                <li><img src="../assets/logo.png" alt="logo bank sampah" style="width: 50px;"></li>
+                <li><a href="../index/index.php">Trashbank</a></li>
+            </ul>
+        </div>
 
-    <div class="nav-container">
-        <ul>
-            <li><a href="index.php" class="garis-bawah">Home</a></li>
-            <li><a href="../user/register.php" class="garis-bawah">Registrasi</a></li>
-            <li><a href="../hadiah/tukar.php" class="garis-bawah">Rewards</a></li>
-            <li><a href="#categories" class="garis-bawah">Categories</a></li>
-            <li><a href="./contact.php" class="garis-bawah">Contact</a></li>
-            <li><a href="../input/kelola-sampah.php" class="garis-bawah">History</a></li>
-            <li><a href="../user/edit-profil.php" class="garis-bawah">Profil</a></li>
-        </ul>
-    </div>
+        <div class="nav-container">
+            <ul>
+                <li><a href="../index/index.php" class="garis-bawah">Home</a></li>
+                <li><a href="../user/register.php" class="garis-bawah">Registrasi</a></li>
+                <li><a href="../hadiah/tukar.php" class="garis-bawah">Rewards</a></li>
+                <li><a href="#categories" class="garis-bawah">Categories</a></li>
+                <li><a href="../index/contact.php" class="garis-bawah">Contact</a></li>
+                <li><a href="kelola-sampah.php" class="garis-bawah">History</a></li>
+                <li><a href="../user/edit-profil.php" class="garis-bawah">Profil</a></li>
+            </ul>
+        </div>
 
-    <div class="get-started">
-        <a href="../index/index.php">Dashboard</a>
-    </div>
-</nav>
+        <div class="get-started">
+            <a href="../user/logout.php">Logout</a>
+        </div>
+    </nav>
 
-    <form action="update-sampah.php" method="POST" class="form-input" style="margin-top: 100px;">
+    <form action="update-sampah.php" method="POST" class="form-input">
         <div class="judul-form">
-            <label>Edit Data Sampah</label>
-            <label>Silakan ubah detail sampah</label>
+            <label><i class="fas fa-edit"></i> Edit Data Sampah</label>
+            <label>Silakan ubah detail sampah di bawah ini</label>
         </div>
 
         <input type="hidden" name="id" value="<?= $data['id'] ?>">
         <input type="hidden" name="poin_lama" value="<?= $data['poin'] ?>">
 
-        <div class="row mb-3">
-            <label class="col-sm-2 col-form-label">Nama</label>
-            <div class="col-sm-5">
-                <input type="text" class="form-control" name="nama" value="<?= $data['nama'] ?>" required>
+        <!-- Nama -->
+        <div class="row">
+                <label>Nama Lengkap</label>
+                <input type="text" class="form-control" name="nama" value="<?= htmlspecialchars($data['nama']) ?>" required>
+
+        </div>
+
+        <!-- Email -->
+        <div class="row">
+            <div class="col-label">
+                <label>Email</label>
+            </div>
+            <div class="col-input">
+                <input type="email" class="form-control" name="email" value="<?= htmlspecialchars($data['email']) ?>" readonly>
             </div>
         </div>
 
-        <div class="row mb-3">
-            <label class="col-sm-2 col-form-label">Email</label>
-            <div class="col-sm-5">
-                <input type="email" class="form-control" name="email" value="<?= $data['email'] ?>" readonly>
+        <!-- Alamat -->
+        <div class="row">
+            <div class="col-label">
+                <label>Alamat</label>
+            </div>
+            <div class="col-input">
+                <input type="text" class="form-control" name="alamat" value="<?= htmlspecialchars($data['alamat']) ?>" required>
             </div>
         </div>
 
-        <div class="row mb-3">
-            <label class="col-sm-2 col-form-label">Alamat</label>
-            <div class="col-sm-5">
-                <input type="text" class="form-control" name="alamat" value="<?= $data['alamat'] ?>" required>
-            </div>
-        </div>
-
+        <!-- Kategori -->
         <div class="option-form">
             <label>Kategori Sampah</label>
             <select name="kategori" required>
@@ -95,52 +104,72 @@ if (!$data) {
             </select>
         </div>
 
-        <div class="row mb-3">
-            <label class="col-sm-2 col-form-label">Berat Sampah (kg)</label>
-            <div class="col-sm-5">
-                <input type="number" class="form-control" name="berat" id="berat" value="<?= $data['berat'] ?>" required onchange="hitungPoin()">
+        <!-- Berat -->
+        <div class="row">
+            <div class="col-label">
+                <label>Berat Sampah (kg)</label>
+            </div>
+            <div class="col-input">
+                <input type="number" class="form-control" name="berat" id="berat" value="<?= $data['berat'] ?>" required onchange="hitungPoin()" step="0.1">
+                <small class="text-muted">1 kg = 10 Poin</small>
             </div>
         </div>
 
-        <div class="row mb-3">
-            <label class="col-sm-2 col-form-label">Poin (otomatis)</label>
-            <div class="col-sm-5">
+        <!-- Poin -->
+        <div class="row">
+                <label>Poin (otomatis)</label>
+            <div class="col-input">
                 <input type="number" class="form-control" name="poin" id="poin" value="<?= $data['poin'] ?>" readonly>
             </div>
         </div>
 
-        <div class="row mb-3">
-            <label class="col-sm-2 col-form-label">Tanggal Setor</label>
-            <div class="col-sm-5">
+        <!-- Tanggal -->
+        <div class="row">
+            <div class="col-label">
+                <label>Tanggal Setor</label>
+            </div>
+            <div class="col-input">
                 <input type="date" class="form-control" name="tanggal" value="<?= $data['tanggal'] ?>" required>
             </div>
         </div>
 
-        <div class="row mb-3">
-            <label class="col-sm-2 col-form-label">Lokasi</label>
-            <div class="col-sm-5">
+        <!-- Lokasi -->
+        <div class="row">
+            <div class="col-label">
+                <label>Lokasi Cabang</label>
+            </div>
+            <div class="radio-group">
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="lokasi" value="Bank Sampah A" <?= $data['lokasi'] == 'Bank Sampah A' ? 'checked' : '' ?>>
-                    <label class="form-check-label">Bank Sampah A</label>
+                    <input class="form-check-input" type="radio" name="lokasi" value="Bank Sampah A" id="lokasiA" <?= $data['lokasi'] == 'Bank Sampah A' ? 'checked' : '' ?>>
+                    <label class="form-check-label" for="lokasiA">Bank Sampah A</label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="lokasi" value="Bank Sampah B" <?= $data['lokasi'] == 'Bank Sampah B' ? 'checked' : '' ?>>
-                    <label class="form-check-label">Bank Sampah B</label>
+                    <input class="form-check-input" type="radio" name="lokasi" value="Bank Sampah B" id="lokasiB" <?= $data['lokasi'] == 'Bank Sampah B' ? 'checked' : '' ?>>
+                    <label class="form-check-label" for="lokasiB">Bank Sampah B</label>
                 </div>
             </div>
         </div>
 
+        <!-- Tombol -->
         <div class="subres">
-            <button type="submit" class="btn btn-primary">Update</button>
-            <a href="kelola-sampah.php" class="btn btn-secondary">Batal</a>
+            <button type="submit" class="btn btn-primary">
+                <i class="fas fa-save"></i> Update
+            </button>
+            <a href="kelola-sampah.php" class="btn btn-secondary">
+                <i class="fas fa-times"></i> Batal
+            </a>
         </div>
     </form>
 
     <script>
         function hitungPoin() {
             let berat = document.getElementById('berat').value;
-            let poin = berat * 10;
-            document.getElementById('poin').value = poin;
+            let poin = parseFloat(berat) * 10;
+            if (!isNaN(poin)) {
+                document.getElementById('poin').value = poin;
+            } else {
+                document.getElementById('poin').value = 0;
+            }
         }
     </script>
 </body>

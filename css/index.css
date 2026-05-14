@@ -4,13 +4,24 @@
     box-sizing: border-box;
 }
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.4)), url('../assets/bg-web-fixx.png');
+
+    background:linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.4)), url('../assets/bg-web-fixx.png');
+
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    min-height: 100vh;
+
+    height: 100vh;
+
+    overflow: hidden;
 }
 
 @media (max-width: 768px) {
@@ -342,7 +353,7 @@ body {
 
 /* ========== CONTACT PAGE ========== */
 .contact-section {
-    padding: 8rem 2rem 5rem 2rem;
+    padding: 5.5rem 2rem 5rem 2rem;
     background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.3)), url('../assets/bg-web-fixx.png');
     background-size: cover;
     background-position: center;
@@ -365,16 +376,16 @@ body {
 .contact-section .text-center {
     text-align: center;
     color: #CFBB99;
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
     font-size: 1.1rem;
 }
 
 .contact-box {
     background: #CFBB99;
     border-radius: 20px;
-    padding: 2.5rem;
+    padding: 2rem;
     max-width: 500px;
-    width: 100%;
+    width: 50%;
     box-shadow: 0 15px 35px rgba(0,0,0,0.2);
     transition: transform 0.3s ease;
     border: 1px solid #889063;

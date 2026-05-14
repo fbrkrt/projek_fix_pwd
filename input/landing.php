@@ -1,8 +1,6 @@
 <?php
 session_start();
-include "../user/cek-cookie.php";  // Tambahkan baris ini
-
-// Rest of your code...
+include "../user/cek-cookie.php";
 ?>
 
 <!DOCTYPE html>
@@ -16,38 +14,38 @@ include "../user/cek-cookie.php";  // Tambahkan baris ini
     <link rel="stylesheet" href="../css/sampah.css">
 </head>
 <body>
-<nav class="nav-full">
-    <div class="logo-web">
-        <ul>
-            <li><img src="../assets/logo.png" alt="logo bank sampah" style="width: 50px;"></li>
-            <li><a href="../index/index.php">Trashbank</a></li>
-        </ul>
-    </div>
+    <nav class="nav-full">
+        <div class="logo-web">
+            <ul>
+                <li><img src="../assets/logo.png" alt="logo bank sampah" style="width: 50px;"></li>
+                <li><a href="../index/index.php">Trashbank</a></li>
+            </ul>
+        </div>
 
-    <div class="nav-container">
-        <ul>
-            <li><a href="../index/index.php" class="garis-bawah">Home</a></li>
-            <li><a href="../user/register.php" class="garis-bawah">Registrasi</a></li>
-            <li><a href="../hadiah/tukar.php" class="garis-bawah">Rewards</a></li>
-            <li><a href="#categories" class="garis-bawah">Categories</a></li>
-            <li><a href="./contact.php" class="garis-bawah">Contact</a></li>
-            <li><a href="../input/kelola-sampah.php" class="garis-bawah">History</a></li>
-            <li><a href="../user/edit-profil.php" class="garis-bawah">Profil</a></li>
-        </ul>
-    </div>
+        <div class="nav-container">
+            <ul>
+                <li><a href="../index/index.php" class="garis-bawah">Home</a></li>
+                <li><a href="../user/register.php" class="garis-bawah">Registrasi</a></li>
+                <li><a href="../hadiah/tukar.php" class="garis-bawah">Rewards</a></li>
+                <li><a href="#categories" class="garis-bawah">Categories</a></li>
+                <li><a href="./contact.php" class="garis-bawah">Contact</a></li>
+                <li><a href="../input/kelola-sampah.php" class="garis-bawah">History</a></li>
+                <li><a href="../user/edit-profil.php" class="garis-bawah">Profil</a></li>
+            </ul>
+        </div>
 
-    <div class="get-started">
-        <a href="../index/index.php">Dashboard</a>
-    </div>
-</nav>
+        <div class="get-started">
+            <a href="../index/index.php">Dashboard</a>
+        </div>
+    </nav>
 
     <section class="success-landing">
         <div class="success-card">
-<div class="success-icon">
-    <i class="bi bi-recycle"></i>
-    <i class="bi bi-trash3-fill"></i>
-    <i class="bi bi-leaf-fill"></i>
-</div>
+            <div class="success-icon">
+                <i class="bi bi-recycle"></i>
+                <i class="bi bi-trash3-fill"></i>
+                <i class="bi bi-leaf-fill"></i>
+            </div>
             
             <?php
             include '../config/koneksi.php';
@@ -69,16 +67,16 @@ include "../user/cek-cookie.php";  // Tambahkan baris ini
             
             <div class="action-buttons">
                 <a href="../index/index.php" class="btn-home">
-    <i class="bi bi-house-fill"></i> Kembali ke Home
-</a>
+                    <i class="bi bi-house-fill"></i> Kembali ke Home
+                </a>
 
-<a href="../hadiah/tukar.php" class="btn-redeem">
-    <i class="bi bi-gift-fill"></i> Tukar Poin Sekarang
-</a>
+                <a href="../hadiah/tukar.php" class="btn-redeem">
+                    <i class="bi bi-gift-fill"></i> Tukar Poin Sekarang
+                </a>
 
-<a href="input.php" class="btn-deposit">
-    <i class="bi bi-trash-fill"></i> Setor Lagi
-</a>
+                <a href="input.php" class="btn-deposit">
+                    <i class="bi bi-trash-fill"></i> Setor Lagi
+                </a>
             </div>
         </div>
     </section>

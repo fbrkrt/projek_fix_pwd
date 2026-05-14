@@ -259,150 +259,113 @@ fieldset .col-sm-5 {
 }
 
 /* ========== KONFIRMASI PAGE ========== */
-.card-info {
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.4)), url('../assets/bg-web-fixx.png');
-    background-size: cover;
-    background-attachment: fixed;
-    min-height: 100vh;
-    padding: 2rem;
-}
-
-.card2 {
-    max-width: 500px;
-    margin: 40px 0;
-    background: #CFBB99;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-}
-
-.card2 .card-header {
-    background-color: #354024;
-    color: #E5D7C4;
-    padding: 1rem;
-    font-size: 1.2rem;
-    font-weight: bold;
-}
-
-.card2 .card-body {
-    padding: 1.5rem;
-    background-color: transparent;
-}
-
-.table {
-    width: 100%;
-    margin-bottom: 1rem;
-    color: #4C3D19;
-    background-color: transparent;
-}
-
-.table tr td {
-    padding: 10px;
-    border-bottom: 1px solid #889063;
-    background-color: transparent;
-}
-
-.table tr td:first-child {
-    font-weight: 600;
-    width: 35%;
-    color: #354024;
-}
-
-.card.text-center{
-    width: 85%;
-    max-width: 1050px;
-    margin: 60px auto;
-    border-radius: 28px;
-    overflow: hidden;
-    background: #f8f8f8;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.18);
-}
-
-/* BODY */
-.card-body{
-    padding: 45px;
-}
-
-.card-title{
-    font-size: 30px;
-    font-weight: 700;
-    color: #2b2b2b;
-}
-
-h3.card-text{
-    font-size: 25px;
-    color: #555;
-    margin-bottom: 40px;
-}
-
-/* BOX MENU */
-.row{
+/* SECTION */
+.card-info{
     display: flex;
-    gap: 30px;
     justify-content: center;
+    align-items: center;
+    padding: 60px 20px;
 }
 
-.col-md-6{
-    flex: 1;
-}
-
-/* CARD KIRI KANAN */
-.col-md-6 .card{
-    border: none !important;
+/* CARD */
+.card2{
+    width: 850px;
+    background: #fffaf3;
     border-radius: 22px;
     overflow: hidden;
-    background: white;
-    transition: 0.3s;
-    box-shadow: 0 5px 18px rgba(0,0,0,0.08);
-}
-
-.col-md-6 .card:hover{
-    transform: translateY(-5px);
-}
-
-/* AKSEN CREAM */
-.border-warning{
-    border-top: 6px solid #CFBB99 !important;
-}
-
-.border-success{
-    border-top: 6px solid #CFBB99 !important;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
 }
 
 /* HEADER CARD */
-.col-md-6 .card-header{
-    background: #CFBB99 !important;
-    color: #3d3225 !important;
-    font-size: 22px;
-    font-weight: 700;
-    border: none;
-    padding: 18px;
+.card-header{
+    background: #355f2e;
+    color: white;
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    padding: 22px;
 }
 
 /* BODY CARD */
-.col-md-6 .card-body{
-    padding: 28px;
+.card-body{
+    padding: 35px;
 }
 
-.col-md-6 .card-text{
-    color: #555;
+.card-body p{
     font-size: 17px;
+    margin-bottom: 25px;
+    color: #5f6f52;
+}
+
+/* TABLE */
+.table{
+    width: 100%;
+    border-collapse: collapse;
+    background: #f8f3eb;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.table tr{
+    border-bottom: 1px solid #ddd;
+}
+
+.table td{
+    padding: 15px;
+    font-size: 16px;
+}
+
+.table tr:hover{
+    background: #efe7db;
+}
+
+/* POIN */
+.table strong{
+    color: #6b8e23 !important;
+    font-size: 18px;
 }
 
 /* BUTTON */
 .btn-primary{
-    background: #355f2e !important;
-    border: none !important;
-    border-radius: 14px;
-    padding: 12px 28px;
-    font-size: 16px;
+    background: #6b8e23;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 12px;
     font-weight: 600;
     transition: 0.3s;
+    margin-top: 15px;
+    margin-right: 10px;
 }
 
 .btn-primary:hover{
-    background: #4f7c45 !important;
-    transform: scale(1.05);
+    background: #355f2e;
+    transform: translateY(-2px);
+}
+
+/* RESPONSIVE */
+@media(max-width: 992px){
+
+    .nav-full{
+        flex-direction: column;
+        height: auto;
+        padding: 20px;
+        gap: 15px;
+    }
+
+    .nav-container ul{
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .card2{
+        width: 100%;
+    }
+
+    .table td{
+        font-size: 14px;
+        padding: 10px;
+    }
 }
 
 /* FOOTER */
@@ -561,5 +524,352 @@ body.landing-page {
     
     .action-buttons {
         flex-direction: column;
+    }
+}
+
+/* CONTAINER */
+.container{
+    margin-top: 110px !important;
+    width: 1050px !important;
+    background: rgba(207,187,153,0.96);
+    padding: 28px;
+    border-radius: 24px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.22);
+}
+
+/* TITLE */
+.container h1{
+    color: #2F3E22;
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+/* BUTTON TAMBAH */
+.btn-success{
+    background: #354024 !important;
+    border: none !important;
+    border-radius: 12px !important;
+    padding: 10px 22px !important;
+    font-size: 17px !important;
+    font-weight: 600 !important;
+    margin-bottom: 22px;
+}
+
+.btn-success:hover{
+    background: #44552f !important;
+}
+
+/* TABLE WRAPPER */
+.table-responsive{
+    border-radius: 18px;
+    overflow: hidden;
+}
+
+/* TABLE */
+.table{
+    margin: 0 !important;
+    background: #f7f1e7 !important;
+}
+
+/* HEADER */
+.table thead th{
+    background: #354024 !important;
+    color: white !important;
+    padding: 14px !important;
+    font-size: 16px;
+    border: none !important;
+    text-align: center;
+}
+
+/* BODY */
+.table tbody td{
+    background: #EFE7DA !important;
+    color: #3c3427 !important;
+    padding: 14px !important;
+    font-size: 15px;
+    text-align: center;
+    vertical-align: middle;
+    border-color: rgba(53,64,36,0.12) !important;
+}
+
+/* ZEBRA */
+.table tbody tr:nth-child(even) td{
+    background: #E7DDCD !important;
+}
+
+/* HOVER */
+.table tbody tr:hover td{
+    background: #ddd1be !important;
+}
+
+/* KOLOM ID */
+.table th:first-child,
+.table td:first-child{
+    width: 40px !important;
+    max-width: 40px !important;
+    min-width: 40px !important;
+    white-space: nowrap;
+    text-align: center;
+}
+
+/* BUTTON EDIT */
+.btn-warning{
+    background: #D9A441 !important;
+    border: none !important;
+    color: white !important;
+    border-radius: 10px !important;
+    padding: 6px 12px !important;
+    font-size: 14px !important;
+}
+
+/* BUTTON DELETE */
+.btn-danger{
+    background: #B64545 !important;
+    border: none !important;
+    border-radius: 10px !important;
+    padding: 6px 12px !important;
+    font-size: 14px !important;
+}
+
+/* BUTTON HOVER */
+.btn-warning:hover,
+.btn-danger:hover{
+    opacity: 0.92;
+    transform: scale(1.03);
+}
+
+
+/* ============================================
+   EDIT SAMPAH PAGE STYLES
+   ============================================ */
+
+/* Form Container */
+.form-input {
+    max-width: 700px;
+    margin: 100px auto 50px auto;
+    background: #CFBB99;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Title Section */
+.judul-form {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #889063;
+}
+
+.judul-form label:first-child {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #354024;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.judul-form label:last-child {
+    font-size: 0.9rem;
+    color: #4C3D19;
+}
+
+.judul-form i {
+    margin-right: 8px;
+}
+
+/* Row Layout */
+.row {
+    margin-bottom: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.row .col-label {
+    width: 30%;
+    text-align: right;
+    padding-right: 1rem;
+    font-weight: 600;
+    color: #354024;
+}
+
+.row .col-label label {
+    margin-bottom: 0;
+}
+
+.row .col-input {
+    width: 65%;
+}
+
+/* Form Controls */
+.form-control,
+select {
+    background-color: #E5D7C4 !important;
+    border: 2px solid #889063 !important;
+    border-radius: 10px !important;
+    padding: 8px 12px !important;
+    width: 100%;
+    color: #4C3D19 !important;
+}
+
+.form-control:focus,
+select:focus {
+    outline: none;
+    border-color: #354024 !important;
+}
+
+.form-control[readonly] {
+    background-color: #d4c8b0 !important;
+    cursor: not-allowed;
+}
+
+/* Select Option */
+.option-form {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.option-form label {
+    width: 30%;
+    text-align: right;
+    padding-right: 1rem;
+    font-weight: 600;
+    color: #354024;
+    margin-bottom: 0;
+}
+
+.option-form select {
+    width: 65%;
+}
+
+/* Radio Group */
+.radio-group {
+    width: 65%;
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.form-check {
+    display: flex;
+    align-items: center;
+}
+
+.form-check-input {
+    margin-right: 0.5rem;
+    cursor: pointer;
+}
+
+.form-check-label {
+    color: #4C3D19;
+    cursor: pointer;
+}
+
+/* Helper Text */
+.text-muted {
+    font-size: 0.7rem;
+    color: #6c757d;
+    display: block;
+    margin-top: 4px;
+}
+
+/* Button Group */
+.subres {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #889063;
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: #354024 !important;
+    border: none !important;
+    padding: 10px 30px !important;
+    border-radius: 30px !important;
+    font-weight: bold !important;
+    color: #E5D7C4 !important;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-primary:hover {
+    background-color: #4a5a30 !important;
+}
+
+.btn-secondary {
+    background-color: #889063 !important;
+    border: none !important;
+    padding: 10px 30px !important;
+    border-radius: 30px !important;
+    font-weight: bold !important;
+    color: #354024 !important;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-secondary:hover {
+    background-color: #9aa870 !important;
+    color: #1e2a14 !important;
+    text-decoration: none;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 768px) {
+    .form-input {
+        margin: 90px 20px 30px 20px;
+        padding: 1.5rem;
+    }
+    
+    .judul-form label:first-child {
+        font-size: 1.5rem;
+    }
+    
+    .row {
+        flex-direction: column;
+    }
+    
+    .row .col-label,
+    .row .col-input,
+    .option-form label,
+    .option-form select,
+    .radio-group {
+        width: 100%;
+        text-align: left;
+    }
+    
+    .row .col-label {
+        margin-bottom: 5px;
+    }
+    
+    .option-form label {
+        margin-bottom: 5px;
+    }
+    
+    .radio-group {
+        margin-top: 5px;
+    }
+    
+    .subres {
+        flex-direction: column;
+    }
+    
+    .btn-primary,
+    .btn-secondary {
+        width: 100%;
+        justify-content: center;
     }
 }
