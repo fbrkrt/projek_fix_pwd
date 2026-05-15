@@ -11,7 +11,7 @@ include "../user/cek-cookie.php";
     <title>Berhasil Input - Trashbank</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="../css/sampah.css">
+    <link rel="stylesheet" href="../css/sampah.css?v=<?php echo time(); ?>">
 </head>
 <body>
     <nav class="nav-full">
@@ -27,9 +27,9 @@ include "../user/cek-cookie.php";
                 <li><a href="../index/index.php" class="garis-bawah">Home</a></li>
                 <li><a href="../user/register.php" class="garis-bawah">Registrasi</a></li>
                 <li><a href="../hadiah/tukar.php" class="garis-bawah">Rewards</a></li>
-                <li><a href="#categories" class="garis-bawah">Categories</a></li>
-                <li><a href="./contact.php" class="garis-bawah">Contact</a></li>
-                <li><a href="../input/kelola-sampah.php" class="garis-bawah">History</a></li>
+                <li><a href="../index/index.php#categories" class="garis-bawah">Categories</a></li>
+                <li><a href="../index/contact.php" class="garis-bawah">Contact</a></li>
+                <li><a href="kelola-sampah.php" class="garis-bawah">History</a></li>
                 <li><a href="../user/edit-profil.php" class="garis-bawah">Profil</a></li>
             </ul>
         </div>

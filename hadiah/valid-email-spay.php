@@ -1,12 +1,22 @@
+<?php
+session_start();
+include "../user/cek-cookie.php";
+
+if(!isset($_SESSION['email'])){
+    header("Location: ../user/login.php");
+    exit;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SALDO SPAY</title>
+    <title>Voucher Shopee</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../css/hadiah.css">
+    <link rel="stylesheet" href="../css/hadiah.css?v=<?php echo time(); ?>">
 </head>
 
 <body class="p-4">
@@ -22,9 +32,9 @@
         <ul>
             <li><a href="index.php" class="garis-bawah">Home</a></li>
             <li><a href="../user/register.php" class="garis-bawah">Registrasi</a></li>
-            <li><a href="../hadiah/tukar.php" class="garis-bawah">Rewards</a></li>
-            <li><a href="#categories" class="garis-bawah">Categories</a></li>
-            <li><a href="./contact.php" class="garis-bawah">Contact</a></li>
+            <li><a href="tukar.php" class="garis-bawah">Rewards</a></li>
+            <li><a href="../index/index.php#categories" class="garis-bawah">Categories</a></li>
+            <li><a href="../index/contact.php" class="garis-bawah">Contact</a></li>
             <li><a href="../input/kelola-sampah.php" class="garis-bawah">History</a></li>
             <li><a href="../user/edit-profil.php" class="garis-bawah">Profil</a></li>
         </ul>
@@ -35,7 +45,7 @@
     </div>
 </nav>
 
-    <h1>Nomor Akun Shopeepay</h1>
+    <h1>Nomor Akun Shopee</h1>
 
     <form action="landingpoin.php?id=11" method="POST">
         <div class="mb-3">

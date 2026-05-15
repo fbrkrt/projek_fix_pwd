@@ -22,6 +22,7 @@ $poin = $data['berat'] * 10;
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Konfirmasi Sampah - Trashbank</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="../css/sampah.css?v=<?php echo time(); ?>">
 </head>
 <body>
@@ -38,9 +39,9 @@ $poin = $data['berat'] * 10;
                 <li><a href="../index/index.php" class="garis-bawah">Home</a></li>
                 <li><a href="../user/register.php" class="garis-bawah">Registrasi</a></li>
                 <li><a href="../hadiah/tukar.php" class="garis-bawah">Rewards</a></li>
-                <li><a href="#categories" class="garis-bawah">Categories</a></li>
-                <li><a href="./contact.php" class="garis-bawah">Contact</a></li>
-                <li><a href="../input/kelola-sampah.php" class="garis-bawah">History</a></li>
+                <li><a href="../index/index.php#categories" class="garis-bawah">Categories</a></li>
+                <li><a href="../index/contact.php" class="garis-bawah">Contact</a></li>
+                <li><a href="kelola-sampah.php" class="garis-bawah">History</a></li>
                 <li><a href="../user/edit-profil.php" class="garis-bawah">Profil</a></li>
             </ul>
         </div>
@@ -106,10 +107,9 @@ $poin = $data['berat'] * 10;
                     <input type="hidden" name="berat" value="<?php echo $data['berat']; ?>">
                     <input type="hidden" name="tanggal" value="<?php echo $data['tanggal']; ?>">
                     <input type="hidden" name="lokasi" value="<?php echo htmlspecialchars($data['lokasi']); ?>">
-                    <br>
-                    <button type="submit" name="confirm" class="btn btn-primary">✅ Ya, Simpan</button>
+                    <button type="submit" class="btn btn-secondary" name="confirm"><i class="fas fa-save"></i> Konfirmasi</button>
                 </form>
-                <a href="batal.php" class="btn btn-primary">❌ Batal</a>
+                <a href="batal.php" class="btn btn-danger"><i class="fas fa-times"></i> Batal</a>
             </div>
         </div>
     </section>

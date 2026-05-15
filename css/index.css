@@ -20,8 +20,6 @@ body {
     background-attachment: fixed;
 
     height: 100vh;
-
-    overflow: hidden;
 }
 
 @media (max-width: 768px) {
@@ -132,7 +130,7 @@ body {
     align-items: center;
     text-align: center;
     padding: 0 2rem;
-    padding-top: 100px;
+    padding-top: 50px;
 }
 
 .awalan-web .text-index h1 {

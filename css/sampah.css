@@ -258,114 +258,164 @@ fieldset .col-sm-5 {
     transform: translateY(-2px);
 }
 
-/* ========== KONFIRMASI PAGE ========== */
-/* SECTION */
-.card-info{
+/* ================= KONFIRMASI CSS ================= */
+
+.card-info {
+    min-height: 100vh;
+    padding: 2rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 60px 20px;
+    background: transparent !important;
+    margin-top: 60px;
 }
 
-/* CARD */
-.card2{
-    width: 850px;
-    background: #fffaf3;
-    border-radius: 22px;
-    overflow: hidden;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
-}
-
-/* HEADER CARD */
-.card-header{
-    background: #355f2e;
-    color: white;
-    text-align: center;
-    font-size: 28px;
-    font-weight: bold;
-    padding: 22px;
-}
-
-/* BODY CARD */
-.card-body{
-    padding: 35px;
-}
-
-.card-body p{
-    font-size: 17px;
-    margin-bottom: 25px;
-    color: #5f6f52;
-}
-
-/* TABLE */
-.table{
+.card2 {
+    max-width: 550px;
     width: 100%;
-    border-collapse: collapse;
-    background: #f8f3eb;
-    border-radius: 15px;
+    margin: 0 auto;
+    background: #CFBB99;
+    border-radius: 24px;
     overflow: hidden;
+    box-shadow: 0 15px 35px rgba(53, 64, 36, 0.15);
 }
 
-.table tr{
-    border-bottom: 1px solid #ddd;
-}
-
-.table td{
-    padding: 15px;
-    font-size: 16px;
-}
-
-.table tr:hover{
-    background: #efe7db;
-}
-
-/* POIN */
-.table strong{
-    color: #6b8e23 !important;
-    font-size: 18px;
-}
-
-/* BUTTON */
-.btn-primary{
-    background: #6b8e23;
+.card2 .card-header {
+    background-color: #354024;
+    color: #F5F0E8;
+    padding: 1.2rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
     border: none;
-    padding: 12px 24px;
-    border-radius: 12px;
+}
+
+.card2 .card-body {
+    padding: 1.8rem;
+    background-color: #CFBB99;
+}
+
+/* Hilangin background putih di tabel */
+.table {
+    width: 100%;
+    margin-bottom: 1.5rem;
+    background: transparent !important;
+}
+
+.table tr {
+    border-bottom: 1px solid #889063;
+}
+
+.table tr:last-child {
+    border-bottom: none;
+}
+
+.table td {
+    padding: 12px 8px;
+    background: transparent !important;
+    color: #354024;
+    border: none;
+}
+
+.table td:first-child {
     font-weight: 600;
-    transition: 0.3s;
-    margin-top: 15px;
-    margin-right: 10px;
+    width: 35%;
+    color: #2c3a1f;
 }
 
-.btn-primary:hover{
-    background: #355f2e;
+.table td:last-child {
+    color: #3d4a2a;
+}
+
+/* ================= BUTTON KONFIRMASI ================= */
+
+.action-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+.btn-konfirmasi {
+    background: linear-gradient(135deg, #2e7d32 0%, #1b5e20 100%);
+    color: white;
+    border: none;
+    padding: 12px 32px;
+    border-radius: 50px !important;  /* TAMBAHKAN !important */
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(46, 125, 50, 0.3);
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-konfirmasi:hover {
+    background: linear-gradient(135deg, #1b5e20 0%, #0d3d10 100%);
     transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(46, 125, 50, 0.4);
 }
 
-/* RESPONSIVE */
-@media(max-width: 992px){
+.btn-konfirmasi:active {
+    transform: translateY(0);
+}
 
-    .nav-full{
+.btn-batal {
+   background: linear-gradient(135deg, #c62828 0%, #b71c1c 100%);
+    color: white;
+    border: none;
+    padding: 12px 32px;
+    border-radius: 50px !important;  /* TAMBAHKAN !important */
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(198, 40, 40, 0.3);
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+}
+
+.btn-batal:hover {
+    background: linear-gradient(135deg, #b71c1c 0%, #8e0000 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(198, 40, 40, 0.4);
+    color: white;
+    text-decoration: none;
+}
+
+.btn-batal:active {
+    transform: translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+    .action-buttons {
         flex-direction: column;
-        height: auto;
-        padding: 20px;
-        gap: 15px;
+        gap: 12px;
     }
-
-    .nav-container ul{
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 15px;
-    }
-
-    .card2{
+    
+    .btn-konfirmasi, .btn-batal {
         width: 100%;
+        justify-content: center;
+        padding: 10px 20px;
     }
+}
 
-    .table td{
-        font-size: 14px;
-        padding: 10px;
-    }
+/* Poin hijau */
+.poin-value {
+    color: #2a5c2e;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+/* Hilangin background input (ga ada input di konfirmasi, tapi kalo ada) */
+input, textarea, select {
+    background: #E8DFD1 !important;
+    border: 1px solid #889063 !important;
 }
 
 /* FOOTER */
@@ -640,16 +690,16 @@ body.landing-page {
 }
 
 
-/* ============================================
+//* ============================================
    EDIT SAMPAH PAGE STYLES
    ============================================ */
 
 /* Form Container */
 .form-input {
-    max-width: 700px;
+    max-width: 650px;
     margin: 100px auto 50px auto;
     background: #CFBB99;
-    padding: 2rem;
+    padding: 2rem 2rem;
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
@@ -663,7 +713,7 @@ body.landing-page {
 }
 
 .judul-form label:first-child {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     font-weight: bold;
     color: #354024;
     display: block;
@@ -671,7 +721,7 @@ body.landing-page {
 }
 
 .judul-form label:last-child {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: #4C3D19;
 }
 
@@ -681,7 +731,7 @@ body.landing-page {
 
 /* Row Layout */
 .row {
-    margin-bottom: 1rem;
+    margin-bottom: 1.2rem;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -689,7 +739,7 @@ body.landing-page {
 
 .row .col-label {
     width: 30%;
-    text-align: right;
+    text-align: left;
     padding-right: 1rem;
     font-weight: 600;
     color: #354024;
@@ -700,7 +750,7 @@ body.landing-page {
 }
 
 .row .col-input {
-    width: 65%;
+    width: 70%;
 }
 
 /* Form Controls */
@@ -709,9 +759,10 @@ select {
     background-color: #E5D7C4 !important;
     border: 2px solid #889063 !important;
     border-radius: 10px !important;
-    padding: 8px 12px !important;
+    padding: 10px 12px !important;
     width: 100%;
     color: #4C3D19 !important;
+    font-size: 14px !important;
 }
 
 .form-control:focus,
@@ -727,7 +778,7 @@ select:focus {
 
 /* Select Option */
 .option-form {
-    margin-bottom: 1rem;
+    margin-bottom: 1.2rem;
     display: flex;
     align-items: center;
     flex-wrap: wrap;
@@ -735,7 +786,7 @@ select:focus {
 
 .option-form label {
     width: 30%;
-    text-align: right;
+    text-align: left;
     padding-right: 1rem;
     font-weight: 600;
     color: #354024;
@@ -743,30 +794,60 @@ select:focus {
 }
 
 .option-form select {
-    width: 65%;
+    width: 70%;
 }
 
 /* Radio Group */
+/* Radio button styling - biar keliatan checked nya */
+/* Custom radio - lebih pasti berubah warna */
 .radio-group {
-    width: 65%;
     display: flex;
-    gap: 1.5rem;
-    flex-wrap: wrap;
-}
-
-.form-check {
-    display: flex;
+    gap: 25px;
     align-items: center;
 }
 
-.form-check-input {
-    margin-right: 0.5rem;
+.radio-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
     cursor: pointer;
 }
 
-.form-check-label {
-    color: #4C3D19;
+.radio-label input {
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 2px solid #354024;
+    border-radius: 50%;
+    margin: 0;
+    position: relative;
     cursor: pointer;
+    background: white;
+}
+
+.radio-label input:checked {
+    border-color: #2e7d32;
+    background: #2e7d32;
+}
+
+.radio-label input:checked::before {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 8px;
+    height: 8px;
+    background: white;
+    border-radius: 50%;
+}
+
+.radio-label span {
+    color: #354024;
+    cursor: pointer;
+}
+
+.radio-label:hover span {
+    color: #2e7d32;
 }
 
 /* Helper Text */
@@ -783,7 +864,7 @@ select:focus {
     gap: 1rem;
     justify-content: center;
     margin-top: 2rem;
-    padding-top: 1rem;
+    padding-top: 1.2rem;
     border-top: 1px solid #889063;
 }
 
@@ -791,14 +872,15 @@ select:focus {
 .btn-primary {
     background-color: #354024 !important;
     border: none !important;
-    padding: 10px 30px !important;
+    padding: 10px 28px !important;
     border-radius: 30px !important;
-    font-weight: bold !important;
+    font-weight: 600 !important;
     color: #E5D7C4 !important;
     cursor: pointer;
     display: inline-flex;
     align-items: center;
     gap: 8px;
+    font-size: 14px !important;
 }
 
 .btn-primary:hover {
@@ -808,14 +890,15 @@ select:focus {
 .btn-secondary {
     background-color: #889063 !important;
     border: none !important;
-    padding: 10px 30px !important;
+    padding: 10px 28px !important;
     border-radius: 30px !important;
-    font-weight: bold !important;
+    font-weight: 600 !important;
     color: #354024 !important;
     text-decoration: none;
     display: inline-flex;
     align-items: center;
     gap: 8px;
+    font-size: 14px !important;
 }
 
 .btn-secondary:hover {
@@ -835,7 +918,7 @@ select:focus {
     }
     
     .judul-form label:first-child {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
     }
     
     .row {
@@ -852,15 +935,16 @@ select:focus {
     }
     
     .row .col-label {
-        margin-bottom: 5px;
+        margin-bottom: 6px;
     }
     
     .option-form label {
-        margin-bottom: 5px;
+        margin-bottom: 6px;
     }
     
     .radio-group {
-        margin-top: 5px;
+        margin-top: 6px;
+        gap: 1rem;
     }
     
     .subres {

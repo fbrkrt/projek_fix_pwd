@@ -13,25 +13,25 @@ if(!isset($_SESSION['email'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Input Sampah - Trashbank</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../css/sampah.css">
+    <link rel="stylesheet" href="../css/sampah.css?v=<?php echo time(); ?>">
 </head>
 <body>
     <nav class="nav-full">
         <div class="logo-web">
             <ul>
                 <li><img src="../assets/logo.png" alt="logo bank sampah" style="width: 50px;"></li>
-                <li><a href="index.php">Trashbank</a></li>
+                <li><a href="../index/index.php">Trashbank</a></li>
             </ul>
         </div>
 
         <div class="nav-container">
             <ul>
-                <li><a href="index.php" class="garis-bawah">Home</a></li>
+                <li><a href="../index/index.php" class="garis-bawah">Home</a></li>
                 <li><a href="../user/register.php" class="garis-bawah">Registrasi</a></li>
                 <li><a href="../hadiah/tukar.php" class="garis-bawah">Rewards</a></li>
-                <li><a href="#categories" class="garis-bawah">Categories</a></li>
-                <li><a href="./contact.php" class="garis-bawah">Contact</a></li>
-                <li><a href="../input/kelola-sampah.php" class="garis-bawah">History</a></li>
+                <li><a href="../index/index.php#categories" class="garis-bawah">Categories</a></li>
+                <li><a href="../index/contact.php" class="garis-bawah">Contact</a></li>
+                <li><a href="kelola-sampah.php" class="garis-bawah">History</a></li>
                 <li><a href="../user/edit-profil.php" class="garis-bawah">Profil</a></li>
             </ul>
         </div>
@@ -88,13 +88,12 @@ if(!isset($_SESSION['email'])){
         
         <div class="mb-3">
             <label class="form-label">Lokasi Cabang</label>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="lokasi" value="Bank Sampah A" required>
-                <label class="form-check-label">Bank Sampah A</label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="lokasi" value="Bank Sampah B">
-                <label class="form-check-label">Bank Sampah B</label>
+            <div>
+                <input type="radio" name="lokasi" value="Bank Sampah A" id="lokasiA" required>
+                <label for="lokasiA">Bank Sampah A</label>
+                <br>
+                <input type="radio" name="lokasi" value="Bank Sampah B" id="lokasiB">
+                <label for="lokasiB">Bank Sampah B</label>
             </div>
         </div>
 

@@ -23,7 +23,7 @@ $user = mysqli_fetch_assoc($query);
     <title>Edit Profil</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="../css/register-login.css">
+    <link rel="stylesheet" href="../css/register-login.css?v=<?php echo time(); ?>">
 </head>
 <body>
     <nav class="nav-full">
@@ -37,12 +37,12 @@ $user = mysqli_fetch_assoc($query);
         <div class="nav-container">
             <ul>
                 <li><a href="../index/index.php" class="garis-bawah">Home</a></li>
-                <li><a href="../user/register.php" class="garis-bawah">Registrasi</a></li>
+                <li><a href="register.php" class="garis-bawah">Registrasi</a></li>
                 <li><a href="../hadiah/tukar.php" class="garis-bawah">Rewards</a></li>
-                <li><a href="#categories" class="garis-bawah">Categories</a></li>
+                <li><a href="../index/index.php#categories" class="garis-bawah">Categories</a></li>
                 <li><a href="../index/contact.php" class="garis-bawah">Contact</a></li>
                 <li><a href="../input/kelola-sampah.php" class="garis-bawah">History</a></li>
-                <li><a href="../user/edit-profil.php" class="garis-bawah">Profil</a></li>
+                <li><a href="edit-profil.php" class="garis-bawah">Profil</a></li>
             </ul>
         </div>
 

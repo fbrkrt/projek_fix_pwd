@@ -15,7 +15,7 @@ $confirm_password = $_POST['confirm_password'];
 // Validasi password jika diisi
 if (!empty($password)) {
     if ($password !== $confirm_password) {
-        echo "<script>alert('Password tidak sama!'); window.location='edit_profil.php';</script>";
+        echo "<script>alert('Password tidak sama!'); window.location='edit-profil.php';</script>";
         exit;
     }
     $password_hash = password_hash($password, PASSWORD_DEFAULT);

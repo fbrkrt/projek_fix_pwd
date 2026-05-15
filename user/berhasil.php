@@ -32,12 +32,12 @@ if (!isset($_SESSION['nama'])) {
         <div class="nav-container">
             <ul>
                 <li><a href="../index/index.php" class="garis-bawah">Home</a></li>
-                <li><a href="../user/register.php" class="garis-bawah">Registrasi</a></li>
+                <li><a href="register.php" class="garis-bawah">Registrasi</a></li>
                 <li><a href="../hadiah/tukar.php" class="garis-bawah">Rewards</a></li>
                 <li><a href="../index/index.php#categories" class="garis-bawah">Categories</a></li>
                 <li><a href="../index/contact.php" class="garis-bawah">Contact</a></li>
                 <li><a href="../input/kelola-sampah.php" class="garis-bawah">History</a></li>
-                <li><a href="../user/edit-profil.php" class="garis-bawah">Profil</a></li>
+                <li><a href="edit-profil.php" class="garis-bawah">Profil</a></li>
             </ul>
         </div>
 

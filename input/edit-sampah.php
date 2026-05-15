@@ -27,7 +27,7 @@ if (!$data) {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="../css/sampah.css">
-    <link rel="stylesheet" href="../css/edit-sampah.css">
+    <link rel="stylesheet" href="../css/edit-sampah.css?v=<?php echo time(); ?>">
 </head>
 <body>
     <nav class="nav-full">
@@ -43,7 +43,7 @@ if (!$data) {
                 <li><a href="../index/index.php" class="garis-bawah">Home</a></li>
                 <li><a href="../user/register.php" class="garis-bawah">Registrasi</a></li>
                 <li><a href="../hadiah/tukar.php" class="garis-bawah">Rewards</a></li>
-                <li><a href="#categories" class="garis-bawah">Categories</a></li>
+                <li><a href="../index/index.php#categories" class="garis-bawah">Categories</a></li>
                 <li><a href="../index/contact.php" class="garis-bawah">Contact</a></li>
                 <li><a href="kelola-sampah.php" class="garis-bawah">History</a></li>
                 <li><a href="../user/edit-profil.php" class="garis-bawah">Profil</a></li>
@@ -66,9 +66,12 @@ if (!$data) {
 
         <!-- Nama -->
         <div class="row">
+            <div class="col-label">
                 <label>Nama Lengkap</label>
+            </div>
+            <div class="col-input">
                 <input type="text" class="form-control" name="nama" value="<?= htmlspecialchars($data['nama']) ?>" required>
-
+            </div>
         </div>
 
         <!-- Email -->
@@ -92,16 +95,20 @@ if (!$data) {
         </div>
 
         <!-- Kategori -->
-        <div class="option-form">
-            <label>Kategori Sampah</label>
-            <select name="kategori" required>
-                <option value="Sampah Plastik" <?= $data['kategori'] == 'Sampah Plastik' ? 'selected' : '' ?>>Sampah Plastik</option>
-                <option value="Sampah Kertas" <?= $data['kategori'] == 'Sampah Kertas' ? 'selected' : '' ?>>Sampah Kertas</option>
-                <option value="Sampah Logam" <?= $data['kategori'] == 'Sampah Logam' ? 'selected' : '' ?>>Sampah Logam</option>
-                <option value="Sampah Kaca" <?= $data['kategori'] == 'Sampah Kaca' ? 'selected' : '' ?>>Sampah Kaca</option>
-                <option value="Sampah Organik" <?= $data['kategori'] == 'Sampah Organik' ? 'selected' : '' ?>>Sampah Organik</option>
-                <option value="Sampah Elektronik" <?= $data['kategori'] == 'Sampah Elektronik' ? 'selected' : '' ?>>Sampah Elektronik</option>
-            </select>
+        <div class="row">
+            <div class="col-label">
+                <label>Kategori Sampah</label>
+            </div>
+            <div class="col-input">
+                <select name="kategori" class="form-control" required>
+                    <option value="Sampah Plastik" <?= $data['kategori'] == 'Sampah Plastik' ? 'selected' : '' ?>>Sampah Plastik</option>
+                    <option value="Sampah Kertas" <?= $data['kategori'] == 'Sampah Kertas' ? 'selected' : '' ?>>Sampah Kertas</option>
+                    <option value="Sampah Logam" <?= $data['kategori'] == 'Sampah Logam' ? 'selected' : '' ?>>Sampah Logam</option>
+                    <option value="Sampah Kaca" <?= $data['kategori'] == 'Sampah Kaca' ? 'selected' : '' ?>>Sampah Kaca</option>
+                    <option value="Sampah Organik" <?= $data['kategori'] == 'Sampah Organik' ? 'selected' : '' ?>>Sampah Organik</option>
+                    <option value="Sampah Elektronik" <?= $data['kategori'] == 'Sampah Elektronik' ? 'selected' : '' ?>>Sampah Elektronik</option>
+                </select>
+            </div>
         </div>
 
         <!-- Berat -->
@@ -117,7 +124,9 @@ if (!$data) {
 
         <!-- Poin -->
         <div class="row">
+            <div class="col-label">
                 <label>Poin (otomatis)</label>
+            </div>
             <div class="col-input">
                 <input type="number" class="form-control" name="poin" id="poin" value="<?= $data['poin'] ?>" readonly>
             </div>
@@ -138,15 +147,15 @@ if (!$data) {
             <div class="col-label">
                 <label>Lokasi Cabang</label>
             </div>
-            <div class="radio-group">
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="lokasi" value="Bank Sampah A" id="lokasiA" <?= $data['lokasi'] == 'Bank Sampah A' ? 'checked' : '' ?>>
-                    <label class="form-check-label" for="lokasiA">Bank Sampah A</label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="lokasi" value="Bank Sampah B" id="lokasiB" <?= $data['lokasi'] == 'Bank Sampah B' ? 'checked' : '' ?>>
-                    <label class="form-check-label" for="lokasiB">Bank Sampah B</label>
-                </div>
+            <div class="col-input">
+                <label style="margin-right: 20px;">
+                    <input type="radio" name="lokasi" value="Bank Sampah A" <?= ($data['lokasi'] == 'Bank Sampah A') ? 'checked' : '' ?> style="margin-right: 5px;">
+                    Bank Sampah A
+                </label>
+                <label>
+                    <input type="radio" name="lokasi" value="Bank Sampah B" <?= ($data['lokasi'] == 'Bank Sampah B') ? 'checked' : '' ?> style="margin-right: 5px;">
+                    Bank Sampah B
+                </label>
             </div>
         </div>
 
