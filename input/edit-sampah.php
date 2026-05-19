@@ -148,14 +148,18 @@ if (!$data) {
                 <label>Lokasi Cabang</label>
             </div>
             <div class="col-input">
-                <label style="margin-right: 20px;">
-                    <input type="radio" name="lokasi" value="Bank Sampah A" <?= ($data['lokasi'] == 'Bank Sampah A') ? 'checked' : '' ?> style="margin-right: 5px;">
-                    Bank Sampah A
-                </label>
-                <label>
-                    <input type="radio" name="lokasi" value="Bank Sampah B" <?= ($data['lokasi'] == 'Bank Sampah B') ? 'checked' : '' ?> style="margin-right: 5px;">
-                    Bank Sampah B
-                </label>
+                <div class="radio-group-custom">
+                    <label class="radio-custom" style="display: flex; flex-direction: row;">
+                        <input type="radio" name="lokasi" value="Bank Sampah A" <?= ($data['lokasi'] == 'Bank Sampah A') ? 'checked' : '' ?>>
+                        <span class="radio-btn"></span>
+                        Bank Sampah A
+                    </label>
+                    <label class="radio-custom" style="display: flex; flex-direction: row;">
+                        <input type="radio" name="lokasi" value="Bank Sampah B" <?= ($data['lokasi'] == 'Bank Sampah B') ? 'checked' : '' ?>>
+                        <span class="radio-btn"></span>
+                        Bank Sampah B
+                    </label>
+                </div>
             </div>
         </div>
 

@@ -88,18 +88,24 @@ if(!isset($_SESSION['email'])){
         
         <div class="mb-3">
             <label class="form-label">Lokasi Cabang</label>
-            <div>
-                <input type="radio" name="lokasi" value="Bank Sampah A" id="lokasiA" required>
-                <label for="lokasiA">Bank Sampah A</label>
-                <br>
-                <input type="radio" name="lokasi" value="Bank Sampah B" id="lokasiB">
-                <label for="lokasiB">Bank Sampah B</label>
+            <div class="radio-group-custom">
+                <label class="radio-custom">
+                    <input type="radio" name="lokasi" value="Bank Sampah A" required>
+                    <span class="radio-btn"></span>
+                    Bank Sampah A
+                </label>
+                <label class="radio-custom">
+                    <input type="radio" name="lokasi" value="Bank Sampah B">
+                    <span class="radio-btn"></span>
+                    Bank Sampah B
+                </label>
             </div>
         </div>
 
-        <div class="mb-3 form-check">
-            <input class="form-check-input" type="checkbox" id="gridCheck1" required>
-            <label class="form-check-label" for="gridCheck1">
+        <div class="mb-3">
+            <label class="checkbox-custom">
+                <input type="checkbox" required>
+                <span class="check-btn"></span>
                 Saya setuju dengan syarat dan ketentuan yang berlaku
             </label>
         </div>
