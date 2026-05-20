@@ -56,7 +56,7 @@ $poin = $data['berat'] * 10;
             <h5 class="card-header">Konfirmasi Data Sampah</h5>
             <div class="card-body">
                 <p>Periksa kembali data Anda sebelum disimpan:</p>
-                <table class="table">
+                <table class="table-konfirmasi">
                     <tr>
                         <td>Nama</th>
                         <td>:</th>
@@ -107,9 +107,9 @@ $poin = $data['berat'] * 10;
                     <input type="hidden" name="berat" value="<?php echo $data['berat']; ?>">
                     <input type="hidden" name="tanggal" value="<?php echo $data['tanggal']; ?>">
                     <input type="hidden" name="lokasi" value="<?php echo htmlspecialchars($data['lokasi']); ?>">
-                    <button type="submit" class="btn btn-secondary" name="confirm"><i class="fas fa-save"></i> Konfirmasi</button>
+                    <button type="submit" class="btn btn-konfirmasi" name="confirm"><i class="fas fa-save"></i> Konfirmasi</button>
                 </form>
-                <a href="batal.php" class="btn btn-danger"><i class="fas fa-times"></i> Batal</a>
+                <a href="batal.php" class="btn btn-batal"><i class="fas fa-times"></i> Batal</a>
             </div>
         </div>
     </section>

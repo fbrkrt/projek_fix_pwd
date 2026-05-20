@@ -23,7 +23,7 @@ body {
     }
 }
 
-/* ========== NAVIGATION BAR ========== */
+/* NAVIGATION BAR */
 .nav-full {
     position: fixed;
     top: 0;
@@ -73,7 +73,6 @@ body {
     transition: color 0.3s ease;
 }
 
-/* HOVER NAVBAR WARNA EMAS */
 .nav-container a:hover {
     color: #FFD700;
 }
@@ -89,8 +88,7 @@ body {
     transition: all 0.3s ease;
     transform: translateX(-50%);
 }
-
-/* GARIS BAWAH HOVER WARNA EMAS */
+ 
 .nav-container a:hover::after {
     width: 100%;
     background-color: #FFD700;
@@ -105,14 +103,13 @@ body {
     font-weight: bold;
     transition: all 0.3s ease;
 }
-
-/* BUTTON GET STARTED HOVER WARNA EMAS */
+ 
 .get-started a:hover {
     background-color: #FFD700;
     color: #354024;
 }
 
-/* ========== LOGIN & REGISTER ========== */
+/* login & register */
 .container {
     max-width: 500px;
     margin: 120px auto 3rem auto;
@@ -197,8 +194,7 @@ body {
     text-decoration: underline;
 }
 
-/* ========== CARD UTAMA (berhasil.php) ========== */
-/* ================= SUCCESS CARD ================= */
+/*  berhasil.php  */
 
 .card.text-center{
     width: 90%;
@@ -211,7 +207,7 @@ body {
     overflow: hidden;
 
     background:
-        rgba(28, 34, 27, 0.82);
+        rgba(28, 34, 27, 0.523);
 
     backdrop-filter: blur(6px);
 
@@ -221,10 +217,9 @@ body {
     box-shadow:
         0 10px 35px rgba(0,0,0,0.35);
 }
-/* ================= HEADER ================= */
 
 .bg-succes{
-    background: #355f2e !important;
+    background: #354024 !important;
     color: white;
 
     height: 58px;
@@ -238,7 +233,6 @@ body {
     font-weight: 600;
 }
 
-/* ================= BODY ================= */
 
 .card-body{
     padding: 22px;
@@ -253,8 +247,6 @@ h3.card-text{
       color: #b9c2b5;
 }
 
-/* ================= MENU WRAPPER ================= */
-
 .card-body .row{
     display: flex;
     flex-wrap: nowrap;
@@ -266,10 +258,6 @@ h3.card-text{
     margin: 0;
     padding: 0;
 }
-
-/* ================= MINI CARD ================= */
-
-/* ================= MINI CARD ================= */
 
 .col-md-6 .card{
     background:
@@ -296,8 +284,6 @@ h3.card-text{
     font-weight: 700;
 }
 
-/* TOP ACCENT */
-
 .col-md-6 .card::before{
     content: "";
 
@@ -311,12 +297,10 @@ h3.card-text{
 
     background: linear-gradient(
         90deg,
-        #355f2e,
-        #6ea965
+        #354024,
+        #889063
     );
 }
-
-/* HOVER */
 
 .col-md-6 .card:hover{
     transform: translateY(-3px);
@@ -325,8 +309,6 @@ h3.card-text{
         0 10px 24px rgba(0,0,0,0.08),
         0 2px 4px rgba(0,0,0,0.05);
 }
-
-/* ================= MINI CARD BODY ================= */
 
 .card-body1,
 .card-body2{
@@ -340,14 +322,12 @@ h3.card-text{
     line-height: 1.7;
 }
 
-/* ================= BUTTON ================= */
-
 .btn-primary{
     background:
         linear-gradient(
             135deg,
-            #5f8f52,
-            #3f6b36
+            #354024,
+            #cfa969
         ) !important;
 
     border: none !important;
@@ -363,22 +343,18 @@ h3.card-text{
 }
 
 .btn-primary:hover{
-    background: #2a4b24 !important;
+    background: #354024 !important;
 }
 
-/* ================= FOOTER ================= */
-
-/* ================= FOOTER ================= */
+/* footer */
 .card-footer {
-    background: #2c5e2a !important;
+    background: #354024 !important;
     color: #FFD700 !important;
     border-top: none !important;
     padding: 12px !important;
     font-size: 13px !important;
     text-align: center !important;
 }
-
-/* ================= RESPONSIVE ================= */
 
 @media(max-width:768px){
 

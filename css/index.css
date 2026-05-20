@@ -78,7 +78,6 @@ body {
     transition: color 0.3s ease;
 }
 
-/* HOVER NAVBAR WARNA EMAS */
 .nav-container a:hover {
     color: #FFD700;
 }
@@ -95,7 +94,6 @@ body {
     transform: translateX(-50%);
 }
 
-/* GARIS BAWAH HOVER WARNA EMAS */
 .nav-container a:hover::after {
     width: 100%;
     background-color: #FFD700;
@@ -111,7 +109,6 @@ body {
     transition: all 0.3s ease;
 }
 
-/* BUTTON GET STARTED HOVER WARNA EMAS */
 .get-started a:hover {
     background-color: #FFD700;
     color: #354024;
@@ -156,7 +153,6 @@ body {
     color: #354024;
 }
 
-/* ========== CATEGORIES SECTION ========== */
 .categories {
     padding: 6rem 2rem;
     background: rgba(229, 215, 196, 0.9);
@@ -235,7 +231,6 @@ body {
     color: #354024;
 }
 
-/* ========== POPUP STYLES ========== */
 .popup {
     position: fixed;
     top: 0;
@@ -416,7 +411,6 @@ body {
     min-width: 100px;
 }
 
-/* ========== RESPONSIVE ========== */
 @media (max-width: 768px) {
     .nav-full {
         flex-direction: column;

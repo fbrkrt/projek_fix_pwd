@@ -69,7 +69,6 @@ body {
     transition: color 0.3s ease;
 }
 
-/* HOVER NAVBAR WARNA EMAS */
 .nav-container a:hover {
     color: #FFD700;
 }
@@ -86,7 +85,6 @@ body {
     transform: translateX(-50%);
 }
 
-/* GARIS BAWAH HOVER WARNA EMAS */
 .nav-container a:hover::after {
     width: 100%;
     background-color: #FFD700;
@@ -102,15 +100,12 @@ body {
     transition: all 0.3s ease;
 }
 
-/* BUTTON GET STARTED HOVER WARNA EMAS */
 .get-started a:hover {
     background-color: #FFD700;
     color: #354024;
 }
 
-/* ========== TUKAR PAGE ========== */
-/* ================= HEADER POIN ================= */
-
+/*tukar.php*/
 .jumlah{
     padding-top: 120px;
 
@@ -136,8 +131,6 @@ body {
         0 8px 18px rgba(0,0,0,0.22);
 }
 
-/* ================= GRID HADIAH ================= */
-
 .hadiah{
     width: 85%;
 
@@ -154,8 +147,6 @@ body {
 
     gap: 22px;
 }
-
-/* ================= CARD ================= */
 
 .card{
     border: none !important;
@@ -178,9 +169,7 @@ body {
 
     position: relative;
 }
-
-/* TOP ACCENT */
-
+ 
 .card::before{
     content: "";
 
@@ -207,15 +196,11 @@ body {
         0 12px 24px rgba(0,0,0,0.24);
 }
 
-/* ================= CARD BODY ================= */
-
 .card-body{
     padding: 22px 18px;
 
     text-align: center;
 }
-
-/* ================= TITLE ================= */
 
 .card-title:first-child{
     color: #f4f4f4;
@@ -226,8 +211,6 @@ body {
     margin-bottom: 10px;
 }
 
-/* ================= POIN ================= */
-
 .card-title:nth-child(2){
     color: #d8e6d1;
 
@@ -236,8 +219,6 @@ body {
 
     margin-bottom: 18px;
 }
-
-/* ================= BUTTON ================= */
 
 .btn-primary{
     background:
@@ -272,8 +253,6 @@ body {
         ) !important;
 }
 
-/* ================= RESPONSIVE ================= */
-
 @media(max-width:992px){
 
     .hadiah{
@@ -299,8 +278,7 @@ body {
 
 }
 
-/* ================= LANDING REDEEM ================= */
-
+/* landingpoin.php */
 .landing{
     width: 90%;
     max-width: 520px;
@@ -328,8 +306,6 @@ body {
     overflow: hidden;
 }
 
-/* TOP ACCENT */
-
 .landing::before{
     content: "";
 
@@ -349,8 +325,6 @@ body {
         );
 }
 
-/* ================= TITLE ================= */
-
 .landing h2{
     color: #f5f5f5;
 
@@ -359,8 +333,6 @@ body {
 
     margin-bottom: 18px;
 }
-
-/* ================= TEXT ================= */
 
 .landing p{
     color: #d8e6d1;
@@ -376,8 +348,6 @@ body {
     color: #ffffff;
 }
 
-/* ================= BUTTON ================= */
-
 .landing .btn{
     margin-top: 16px;
 
@@ -392,8 +362,6 @@ body {
     transition: 0.25s ease;
 }
 
-/* BUTTON 1 */
-
 .landing .btn:first-of-type{
     background:
         linear-gradient(
@@ -404,8 +372,6 @@ body {
 
     color: #20301d;
 }
-
-/* BUTTON 2 */
 
 .landing .btn:last-of-type{
     background:
@@ -418,15 +384,11 @@ body {
     color: #20301d;
 }
 
-/* HOVER */
-
 .landing .btn:hover{
     transform: translateY(-3px);
 
     opacity: 0.95;
 }
-
-/* ================= RESPONSIVE ================= */
 
 @media(max-width:768px){
 

@@ -69,7 +69,6 @@ body {
     transition: color 0.3s ease;
 }
 
-/* HOVER NAVBAR WARNA EMAS */
 .nav-container a:hover {
     color: #FFD700;
 }
@@ -86,7 +85,6 @@ body {
     transform: translateX(-50%);
 }
 
-/* GARIS BAWAH HOVER WARNA EMAS */
 .nav-container a:hover::after {
     width: 100%;
     background-color: #FFD700;
@@ -102,7 +100,6 @@ body {
     transition: all 0.3s ease;
 }
 
-/* BUTTON GET STARTED HOVER WARNA EMAS */
 .get-started a:hover {
     background-color: #FFD700;
     color: #354024;
@@ -259,163 +256,154 @@ fieldset .col-sm-5 {
 }
 
 /* ================= KONFIRMASI CSS ================= */
-
 .card-info {
     min-height: 100vh;
-    padding: 2rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: transparent !important;
+    padding: 2rem;
     margin-top: 60px;
+    background: transparent;
 }
 
 .card2 {
-    max-width: 550px;
     width: 100%;
-    margin: 0 auto;
+    max-width: 550px;
     background: #CFBB99;
     border-radius: 24px;
     overflow: hidden;
-    box-shadow: 0 15px 35px rgba(53, 64, 36, 0.15);
+    box-shadow: 0 15px 35px rgba(53, 64, 36, 0.18);
 }
 
-.card2 .card-header {
-    background-color: #354024;
-    color: #F5F0E8;
-    padding: 1.2rem;
+/* HEADER */
+.card-header {
+    background: #354024 !important;
+    color: #F5F0E8 !important;
+    padding: 18px;
+    text-align: center;
     font-size: 1.2rem;
     font-weight: bold;
-    text-align: center;
-    border: none;
+    border: none !important;
 }
 
-.card2 .card-body {
+/* BODY */
+.card-body {
+    background: #CFBB99 !important;
     padding: 1.8rem;
-    background-color: #CFBB99;
 }
 
-/* Hilangin background putih di tabel */
-.table {
+.card-body p {
+    color: #354024;
+    margin-bottom: 1rem;
+}
+
+/* TABLE KONFIRMASI */
+
+.table-konfirmasi {
     width: 100%;
+    border-collapse: collapse;
+    background: #CFBB99;
     margin-bottom: 1.5rem;
-    background: transparent !important;
 }
 
-.table tr {
-    border-bottom: 1px solid #889063;
+/* ROW */
+.table-konfirmasi tr {
+    border-bottom: 1px solid #9da37e;
 }
 
-.table tr:last-child {
+.table-konfirmasi tr:last-child {
     border-bottom: none;
 }
 
-.table td {
-    padding: 12px 8px;
-    background: transparent !important;
+/* CELL */
+.table-konfirmasi td {
+    padding: 15px 10px;
+    background: #CFBB99;
     color: #354024;
-    border: none;
+    text-align: left;
+    vertical-align: top;
 }
 
-.table td:first-child {
-    font-weight: 600;
-    width: 35%;
-    color: #2c3a1f;
+/* LABEL */
+.table-konfirmasi td:nth-child(1) {
+    width: 190px;
+    font-weight: 700;
+    color: #2b351f;
 }
 
-.table td:last-child {
-    color: #3d4a2a;
-}
-
-/* ================= BUTTON KONFIRMASI ================= */
-
-.action-buttons {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    margin-top: 25px;
-}
-
-.btn-konfirmasi {
-    background: linear-gradient(135deg, #2e7d32 0%, #1b5e20 100%);
-    color: white;
-    border: none;
-    padding: 12px 32px;
-    border-radius: 50px !important;  /* TAMBAHKAN !important */
-    font-weight: 600;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 12px rgba(46, 125, 50, 0.3);
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.btn-konfirmasi:hover {
-    background: linear-gradient(135deg, #1b5e20 0%, #0d3d10 100%);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(46, 125, 50, 0.4);
-}
-
-.btn-konfirmasi:active {
-    transform: translateY(0);
-}
-
-.btn-batal {
-   background: linear-gradient(135deg, #c62828 0%, #b71c1c 100%);
-    color: white;
-    border: none;
-    padding: 12px 32px;
-    border-radius: 50px !important;  /* TAMBAHKAN !important */
-    font-weight: 600;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 12px rgba(198, 40, 40, 0.3);
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    text-decoration: none;
-}
-
-.btn-batal:hover {
-    background: linear-gradient(135deg, #b71c1c 0%, #8e0000 100%);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(198, 40, 40, 0.4);
-    color: white;
-    text-decoration: none;
-}
-
-.btn-batal:active {
-    transform: translateY(0);
-}
-
-/* Responsive */
-@media (max-width: 500px) {
-    .action-buttons {
-        flex-direction: column;
-        gap: 12px;
-    }
-    
-    .btn-konfirmasi, .btn-batal {
-        width: 100%;
-        justify-content: center;
-        padding: 10px 20px;
-    }
-}
-
-/* Poin hijau */
-.poin-value {
-    color: #2a5c2e;
+/* TITIK DUA */
+.table-konfirmasi td:nth-child(2) {
+    width: 20px;
+    text-align: center;
     font-weight: bold;
-    font-size: 1.1rem;
 }
 
-/* Hilangin background input (ga ada input di konfirmasi, tapi kalo ada) */
-input, textarea, select {
-    background: #E8DFD1 !important;
-    border: 1px solid #889063 !important;
+/* VALUE */
+.table-konfirmasi td:nth-child(3) {
+    padding-left: 18px;
+    color: #3d4a2a;
+    line-height: 1.6;
+}
+
+/* BUTTON */
+.action-buttons{
+    display: flex;
+    gap: 12px;
+    margin-top: 22px;
+}
+
+/* BUTTON DASAR */
+.btn-konfirmasi,
+.btn-batal{
+    border: none;
+    padding: 10px 22px;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: 0.2s ease;
+    text-decoration: none;
+}
+
+/* KONFIRMASI */
+.btn-konfirmasi{
+    background: #8B9367;
+    color: #2f3822;
+}
+
+.btn-konfirmasi:hover{
+    background: #798054;
+    transform: translateY(-1px);
+}
+
+/* BATAL */
+.btn-batal{
+    background: #D9534F;
+    color: white;
+}
+
+.btn-batal:hover{
+    background: #c14440;
+    color: white;
+    transform: translateY(-1px);
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+    .card-info {
+        padding: 1rem;
+    }
+
+    .card2 {
+        max-width: 100%;
+    }
+
+    .table-konfirmasi td:nth-child(1) {
+        width: 120px;
+    }
 }
 
 /* FOOTER */
@@ -522,7 +510,6 @@ body.landing-page {
     color: #E5D7C4;
 }
 
-/* ========== RESPONSIVE ========== */
 @media (max-width: 768px) {
     .nav-full {
         flex-direction: column;
@@ -587,7 +574,6 @@ body.landing-page {
     box-shadow: 0 10px 30px rgba(0,0,0,0.22);
 }
 
-/* TITLE */
 .container h1{
     color: #2F3E22;
     font-size: 42px;
@@ -595,7 +581,6 @@ body.landing-page {
     margin-bottom: 20px;
 }
 
-/* BUTTON TAMBAH */
 .btn-success{
     background: #354024 !important;
     border: none !important;
@@ -610,19 +595,16 @@ body.landing-page {
     background: #44552f !important;
 }
 
-/* TABLE WRAPPER */
 .table-responsive{
     border-radius: 18px;
     overflow: hidden;
 }
 
-/* TABLE */
 .table{
     margin: 0 !important;
     background: #f7f1e7 !important;
 }
 
-/* HEADER */
 .table thead th{
     background: #354024 !important;
     color: white !important;
@@ -632,7 +614,6 @@ body.landing-page {
     text-align: center;
 }
 
-/* BODY */
 .table tbody td{
     background: #EFE7DA !important;
     color: #3c3427 !important;
@@ -643,17 +624,14 @@ body.landing-page {
     border-color: rgba(53,64,36,0.12) !important;
 }
 
-/* ZEBRA */
 .table tbody tr:nth-child(even) td{
     background: #E7DDCD !important;
 }
 
-/* HOVER */
 .table tbody tr:hover td{
     background: #ddd1be !important;
 }
 
-/* KOLOM ID */
 .table th:first-child,
 .table td:first-child{
     width: 40px !important;
@@ -690,11 +668,7 @@ body.landing-page {
 }
 
 
-/* ============================================
-   EDIT SAMPAH PAGE STYLES
-   ============================================ */
-
-/* Form Container */
+/* EDIT SAMPAH PAGE */
 .form-input {
     max-width: 650px;
     margin: 100px auto 50px auto;
@@ -704,7 +678,6 @@ body.landing-page {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
-/* Title Section */
 .judul-form {
     text-align: center;
     margin-bottom: 2rem;
@@ -729,7 +702,6 @@ body.landing-page {
     margin-right: 8px;
 }
 
-/* Row Layout */
 .row {
     margin-bottom: 1.2rem;
     display: flex;
@@ -753,7 +725,6 @@ body.landing-page {
     width: 70%;
 }
 
-/* Form Controls */
 .form-control,
 select {
     background-color: #E5D7C4 !important;
@@ -776,7 +747,6 @@ select:focus {
     cursor: not-allowed;
 }
 
-/* Select Option */
 .option-form {
     margin-bottom: 1.2rem;
     display: flex;
@@ -797,10 +767,6 @@ select:focus {
     width: 70%;
 }
 
-/* Radio Group */
-/* Radio button styling - biar keliatan checked nya */
-/* Custom radio - lebih pasti berubah warna */
-/* Radio & Checkbox Custom - Sejajar Vertikal */
 .radio-group-custom {
     display: flex;
     flex-direction: column;
@@ -874,7 +840,6 @@ select:focus {
     left: 3px;
 }
 
-/* Helper Text */
 .text-muted {
     font-size: 0.7rem;
     color: #6c757d;
@@ -882,7 +847,6 @@ select:focus {
     margin-top: 4px;
 }
 
-/* Button Group */
 .subres {
     display: flex;
     gap: 1rem;
@@ -892,7 +856,6 @@ select:focus {
     border-top: 1px solid #889063;
 }
 
-/* Buttons */
 .btn-primary {
     background-color: #354024 !important;
     border: none !important;
@@ -930,10 +893,6 @@ select:focus {
     color: #1e2a14 !important;
     text-decoration: none;
 }
-
-/* ============================================
-   RESPONSIVE
-   ============================================ */
 
 @media (max-width: 768px) {
     .form-input {
