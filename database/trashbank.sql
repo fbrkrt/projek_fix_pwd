@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 19 Bulan Mei 2026 pada 12.56
+-- Waktu pembuatan: 20 Bulan Mei 2026 pada 06.02
 -- Versi server: 10.4.32-MariaDB
 -- Versi PHP: 8.2.30
 
@@ -71,10 +71,7 @@ CREATE TABLE `sampah` (
 --
 
 INSERT INTO `sampah` (`id`, `nama`, `email`, `alamat`, `kategori`, `berat`, `tanggal`, `lokasi`, `poin`) VALUES
-(1, 'Keonho', 'titikkoma237@gmail.com', 'Padukuhan Banaran VIII, RT 38 RW 8, Banaran, Playen, Gunungkidul', 'Sampah Logam', 100, '2026-02-12', 'Bank Sampah A', 1000),
-(2, 'Keonho', 'titikkoma237@gmail.com', 'Padukuhan Banaran VIII, RT 38 RW 8, Banaran, Playen, Gunungkidul', 'Sampah Kaca', 1000, '2026-02-12', 'Bank Sampah A', 10000),
-(3, 'Keonho', 'titikkoma237@gmail.com', 'Padukuhan Banaran VIII, RT 38 RW 8, Banaran, Playen, Gunungkidul', 'Sampah Kaca', 1000, '2026-02-12', 'Bank Sampah A', 10000),
-(4, 'Keonho', 'titikkoma237@gmail.com', 'Padukuhan Banaran VIII, RT 38 RW 8, Banaran, Playen, Gunungkidul', 'Sampah Logam', 100, '2026-02-12', 'Bank Sampah A', 1000);
+(1, 'Keonho', 'titikkoma237@gmail.com', 'Padukuhan Banaran VIII, RT 38 RW 8, Banaran, Playen, Gunungkidul', 'Sampah Logam', 100, '2026-05-20', 'Bank Sampah A', 1000);
 
 -- --------------------------------------------------------
 
@@ -89,13 +86,6 @@ CREATE TABLE `tukar` (
   `datetime` datetime DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data untuk tabel `tukar`
---
-
-INSERT INTO `tukar` (`id_tukar`, `id_user`, `id_hadiah`, `datetime`) VALUES
-(1, 1, 9, '2026-05-15 04:25:59');
-
 -- --------------------------------------------------------
 
 --
@@ -108,15 +98,16 @@ CREATE TABLE `user` (
   `email` varchar(50) NOT NULL,
   `password` varchar(255) NOT NULL,
   `total` int(11) NOT NULL DEFAULT 0,
-  `remember_token` varchar(255) DEFAULT NULL
+  `remember_token` varchar(255) DEFAULT NULL,
+  `token_expiry` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data untuk tabel `user`
 --
 
-INSERT INTO `user` (`id_user`, `nama`, `email`, `password`, `total`, `remember_token`) VALUES
-(1, 'Keonho', 'titikkoma237@gmail.com', '$2y$10$4ReyM7lft84w1E5I/kBQb.J0dDJ12nchsWyePqGgATCqgP/G8eBmm', 20600, '93e748b718e77c163a525790c6914eab588ed7669311cb992cd9b663b5e4f1d6');
+INSERT INTO `user` (`id_user`, `nama`, `email`, `password`, `total`, `remember_token`, `token_expiry`) VALUES
+(1, 'Keonho', 'titikkoma237@gmail.com', '$2y$10$4et9qSTQSUpcs3mGa4YHTOYN9cTRoFBMmrE1HTva1Agc9OmNRZYHW', 1000, '6a4ecd15e839bd902ac6cbd2025a5c545ccb49c8621b1ae13ef43f41e2c084a6', NULL);
 
 --
 -- Indexes for dumped tables
@@ -132,7 +123,8 @@ ALTER TABLE `hadiah`
 -- Indeks untuk tabel `sampah`
 --
 ALTER TABLE `sampah`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `email` (`email`);
 
 --
 -- Indeks untuk tabel `tukar`
@@ -163,13 +155,13 @@ ALTER TABLE `hadiah`
 -- AUTO_INCREMENT untuk tabel `sampah`
 --
 ALTER TABLE `sampah`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT untuk tabel `tukar`
 --
 ALTER TABLE `tukar`
-  MODIFY `id_tukar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_tukar` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT untuk tabel `user`
@@ -180,6 +172,12 @@ ALTER TABLE `user`
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
 --
+
+--
+-- Ketidakleluasaan untuk tabel `sampah`
+--
+ALTER TABLE `sampah`
+  ADD CONSTRAINT `sampah_ibfk_1` FOREIGN KEY (`email`) REFERENCES `user` (`email`) ON DELETE SET NULL ON UPDATE CASCADE;
 
 --
 -- Ketidakleluasaan untuk tabel `tukar`
